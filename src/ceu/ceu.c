@@ -15,6 +15,35 @@ volatile bool g_frame_captured  = false;
 
 #define OV5640_FW_START_ADDR  0x8000
 #define  TIMEOUT  2
+#define OSPI_OM_RESET BSP_IO_PORT_12_PIN_07
+static fsp_err_t hyper_ram_config_set(uint32_t address, uint16_t value) {
+    spi_flash_direct_transfer_t xfer = {
+        .address = address,
+        .address_length = 4,
+        .command = 0x6000,
+        .command_length = 2,
+        .data = (uint16_t) value,
+        .data_length = 2,
+        .dummy_cycles = 0,
+    };
+    return R_OSPI_B_DirectTransfer(&g_ospi1_ctrl, &xfer, SPI_FLASH_DIRECT_TRANSFER_DIR_WRITE);
+}
+uint16_t swap16(uint16_t value) {
+    return (uint16_t)((value << 8) | (value >> 8));
+}
+void hyperram_init(void) {
+    /* 1. 硬件复位 HyperRAM 芯片 */
+    R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_12_PIN_07, BSP_IO_LEVEL_LOW);
+    R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_MICROSECONDS);
+    R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_12_PIN_07, BSP_IO_LEVEL_HIGH);
+    R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_MILLISECONDS);
+
+    /* 2. 打开 OSPI 外设 */
+    R_OSPI_B_Open(&g_ospi1_ctrl, &g_ospi1_cfg);
+
+    /* 3. 设置 HyperRAM 配置寄存器 */
+    hyper_ram_config_set(0x01000000, swap16(0x8F1D));
+}
 ospi_b_xspi_command_set_t g_hyper_ram_commands[] =
 {
     {

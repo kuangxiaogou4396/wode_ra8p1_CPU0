@@ -4,7 +4,9 @@
 #include "lcd_mipi/lcd_mipi.h"
 #include "core_cm85.h"
 /* New Thread entry function */
+
 /* pvParameters contains TaskHandle_t */
+#define FB_SIZE (800 * 480 * 2)
 extern uint8_t fb_background[2][DISPLAY_BUFFER_STRIDE_BYTES_INPUT0 * DISPLAY_VSIZE_INPUT0];
 extern volatile uint8_t g_ceu_write_index ;
 extern volatile bool g_frame_captured;
@@ -23,7 +25,7 @@ void main0_thread_entry(void *pvParameters) {
 	R_BSP_SecondaryCoreStart();
 	FSP_PARAMETER_NOT_USED(pvParameters);
 
-	R_OSPI_B_Open(&g_ospi1_ctrl, &g_ospi1_cfg);
+	hyperram_init();
 	R_IIC_MASTER_Open(&g_i2c_master1_ctrl, &g_i2c_master1_cfg);
 	OV5640_RGB565_Default_Config();
 	OV5640_USER_Config();
@@ -47,21 +49,20 @@ void main0_thread_entry(void *pvParameters) {
 	while (1) {
 		if (g_frame_captured) {
 		        g_frame_captured = false;
-
 		        /* 1. DAVE2D 画图 */
 		        d2_framebuffer(d2_handle, (void *)fb_background[g_ceu_write_index], 800, 800, 480, d2_mode_rgb565);
 		        d2_setcolor(d2_handle, 0, 0xFF0000);
 		        d2_renderbox_outline(d2_handle, 100, 100, 280, 280);
 		        d2_executerenderbuffer(d2_handle, renderbuffer, 0);
 		        d2_flushframe(d2_handle);
-		        SCB_CleanDCache_by_Addr((uint32_t *)fb_background[g_ceu_write_index], 800 * 480 * 2);
 		        /* 2. 等待屏幕刷新信号 (防撕裂) */
 		        // 注意：这里必须有一个内部死循环卡住，因为我们要精准卡在 VSYNC 到来的那一瞬间去切换 Buffer
+		        g_vsync_flag = false;
 		        while (!g_vsync_flag) {
 		            // 如果不加 vTaskDelay(1)，这个死循环会占满 100% CPU，导致其他任务卡死
 		            vTaskDelay(1);
 		        }
-		        g_vsync_flag = false; // 用完马上清零，为下一帧做准备
+		        // 用完马上清零，为下一帧做准备
 
 		        /* 3. 切换 Buffer */
 		        R_GLCDC_BufferChange(&g_display0_ctrl, (uint8_t *)fb_background[g_ceu_write_index], DISPLAY_FRAME_LAYER_1);

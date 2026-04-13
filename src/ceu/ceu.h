@@ -148,6 +148,8 @@ void i2c_write( uint16_t reg_addr, uint8_t *data, uint8_t len);
 uint8_t i2c_read( uint16_t reg_addr, uint8_t *data, uint32_t len);
 void OV5640_WriteReg(uint16_t reg, uint8_t data);
 uint8_t OV5640_FOCUS_AD5820_Init(void);
+void hyperram_init(void);
+uint16_t swap16(uint16_t value);
 void OV5640_USER_Config(void);
 void OV5640_ReadID(OV5640_IDTypeDef *OV5640ID);
 uint8_t OV5640_ReadReg(uint16_t reg);

@@ -142,6 +142,7 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/ceu/ceu.o
  .data          0x00000000        0x0 ./src/ceu/ceu.o
  .bss           0x00000000        0x0 ./src/ceu/ceu.o
+ .text.swap16   0x00000000        0x8 ./src/ceu/ceu.o
  .text.i2c_write
                 0x00000000       0x48 ./src/ceu/ceu.o
  .text.OV5640_WriteReg
@@ -1013,8 +1014,6 @@ Discarded input sections
                 0x00000000       0x14 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .text.R_OSPI_B_Close
                 0x00000000       0x6c ./ra/fsp/src/r_ospi_b/r_ospi_b.o
- .text.r_ospi_b_direct_transfer.isra.0
-                0x00000000       0xac ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .text.r_ospi_b_status_sub
                 0x00000000       0x94 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .text.R_OSPI_B_StatusGet
@@ -1025,8 +1024,6 @@ Discarded input sections
                 0x00000000       0xe4 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .text.R_OSPI_B_Erase
                 0x00000000       0xf4 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
- .text.R_OSPI_B_DirectTransfer
-                0x00000000       0x14 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .text.R_OSPI_B_AutoCalibrate
                 0x00000000        0x4 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .text.R_OSPI_B_XipExit
@@ -1071,8 +1068,6 @@ Discarded input sections
                 0x00000000       0x14 ./ra/fsp/src/r_ioport/r_ioport.o
  .text.R_IOPORT_PortWrite
                 0x00000000       0x1c ./ra/fsp/src/r_ioport/r_ioport.o
- .text.R_IOPORT_PinWrite
-                0x00000000       0x28 ./ra/fsp/src/r_ioport/r_ioport.o
  .text.R_IOPORT_PortDirectionSet
                 0x00000000       0x2c ./ra/fsp/src/r_ioport/r_ioport.o
  .text.R_IOPORT_PortEventInputRead
@@ -19217,7 +19212,7 @@ __ram_thread_stack$$
                 0x22020000                        __sau_ddsc_RAM_NSC = .
 
 __flash_readonly$$
-                0x02001428     0xea28
+                0x02001428     0xeb38
                 0x02001428                        __flash_readonly$$Base = .
  *(.flash)
  *(.flash_code)
@@ -19241,1060 +19236,1072 @@ __flash_readonly$$
                 0x020014fc                ra8_mipi_lcd_init
  .text.IICWaitgtc
                 0x02001568       0x64 ./src/ceu/ceu.o
+ .text.hyperram_init
+                0x020015cc       0x74 ./src/ceu/ceu.o
+                0x020015cc                hyperram_init
  .text.i2c_read
-                0x020015cc       0x6c ./src/ceu/ceu.o
-                0x020015cc                i2c_read
+                0x02001640       0x6c ./src/ceu/ceu.o
+                0x02001640                i2c_read
  .text.OV5640_FrameRate_Set
-                0x02001638       0xe0 ./src/ceu/ceu.o
-                0x02001638                OV5640_FrameRate_Set
+                0x020016ac       0xe0 ./src/ceu/ceu.o
+                0x020016ac                OV5640_FrameRate_Set
  .text.OV5640_ISPSize_Set
-                0x02001718      0x1bc ./src/ceu/ceu.o
-                0x02001718                OV5640_ISPSize_Set
+                0x0200178c      0x1bc ./src/ceu/ceu.o
+                0x0200178c                OV5640_ISPSize_Set
  .text.OV5640_OutSize_Set
-                0x020018d4      0x278 ./src/ceu/ceu.o
-                0x020018d4                OV5640_OutSize_Set
+                0x02001948      0x278 ./src/ceu/ceu.o
+                0x02001948                OV5640_OutSize_Set
  .text.OV5640_RGB565_Default_Config
-                0x02001b4c      0x108 ./src/ceu/ceu.o
-                0x02001b4c                OV5640_RGB565_Default_Config
+                0x02001bc0      0x108 ./src/ceu/ceu.o
+                0x02001bc0                OV5640_RGB565_Default_Config
  .text.OV5640_LightMode
-                0x02001c54      0x204 ./src/ceu/ceu.o
-                0x02001c54                OV5640_LightMode
+                0x02001cc8      0x204 ./src/ceu/ceu.o
+                0x02001cc8                OV5640_LightMode
  .text.OV5640_SpecialEffects
-                0x02001e58      0x174 ./src/ceu/ceu.o
-                0x02001e58                OV5640_SpecialEffects
+                0x02001ecc      0x174 ./src/ceu/ceu.o
+                0x02001ecc                OV5640_SpecialEffects
  .text.OV5640_BrightnessConfig
-                0x02001fcc      0x110 ./src/ceu/ceu.o
-                0x02001fcc                OV5640_BrightnessConfig
+                0x02002040      0x110 ./src/ceu/ceu.o
+                0x02002040                OV5640_BrightnessConfig
  .text.OV5640_ContrastConfig
-                0x020020dc      0x120 ./src/ceu/ceu.o
-                0x020020dc                OV5640_ContrastConfig
+                0x02002150      0x120 ./src/ceu/ceu.o
+                0x02002150                OV5640_ContrastConfig
  .text.OV5640_Color_Saturation
-                0x020021fc      0x1e4 ./src/ceu/ceu.o
-                0x020021fc                OV5640_Color_Saturation
+                0x02002270      0x1e4 ./src/ceu/ceu.o
+                0x02002270                OV5640_Color_Saturation
  .text.OV5640_Exposure
-                0x020023e0      0x1d8 ./src/ceu/ceu.o
-                0x020023e0                OV5640_Exposure
+                0x02002454      0x1d8 ./src/ceu/ceu.o
+                0x02002454                OV5640_Exposure
  .text.OV5640_USER_Config
-                0x020025b8       0xb8 ./src/ceu/ceu.o
-                0x020025b8                OV5640_USER_Config
+                0x0200262c       0xb8 ./src/ceu/ceu.o
+                0x0200262c                OV5640_USER_Config
  .text.OV5640_FOCUS_AD5820_Constant_Focus
-                0x02002670       0xa0 ./src/ceu/ceu.o
-                0x02002670                OV5640_FOCUS_AD5820_Constant_Focus
+                0x020026e4       0xa0 ./src/ceu/ceu.o
+                0x020026e4                OV5640_FOCUS_AD5820_Constant_Focus
  .text.OV5640_WriteFW_FSP
-                0x02002710       0x8c ./src/ceu/ceu.o
-                0x02002710                OV5640_WriteFW_FSP
+                0x02002784       0x8c ./src/ceu/ceu.o
+                0x02002784                OV5640_WriteFW_FSP
  .text.OV5640_FOCUS_AD5820_Init
-                0x0200279c      0x2d8 ./src/ceu/ceu.o
-                0x0200279c                OV5640_FOCUS_AD5820_Init
+                0x02002810      0x2d8 ./src/ceu/ceu.o
+                0x02002810                OV5640_FOCUS_AD5820_Init
  .text.g_ceu_callback
-                0x02002a74       0x14 ./src/ceu/ceu.o
-                0x02002a74                g_ceu_callback
+                0x02002ae8       0x14 ./src/ceu/ceu.o
+                0x02002ae8                g_ceu_callback
  .text.iic1_callback
-                0x02002a88       0x28 ./src/ceu/ceu.o
-                0x02002a88                iic1_callback
+                0x02002afc       0x28 ./src/ceu/ceu.o
+                0x02002afc                iic1_callback
  .text.R_BSP_WarmStart
-                0x02002ab0       0x18 ./src/hal_warmstart.o
-                0x02002ab0                R_BSP_WarmStart
+                0x02002b24       0x18 ./src/hal_warmstart.o
+                0x02002b24                R_BSP_WarmStart
  .text.main0_thread_entry
-                0x02002ac8      0x1bc ./src/main0_thread_entry.o
-                0x02002ac8                main0_thread_entry
+                0x02002b3c      0x16c ./src/main0_thread_entry.o
+                0x02002b3c                main0_thread_entry
  .text.g_common_init
-                0x02002c84        0x4 ./ra_gen/common_data.o
-                0x02002c84                g_common_init
+                0x02002ca8        0x4 ./ra_gen/common_data.o
+                0x02002ca8                g_common_init
  .text.g_hal_init
-                0x02002c88        0x4 ./ra_gen/hal_data.o
-                0x02002c88                g_hal_init
+                0x02002cac        0x4 ./ra_gen/hal_data.o
+                0x02002cac                g_hal_init
  .text.rtos_startup_err_callback_internal
-                0x02002c8c        0x4 ./ra_gen/main.o
-                0x02002c8c                rtos_startup_err_callback
-                0x02002c8c                rtos_startup_err_callback_internal
+                0x02002cb0        0x4 ./ra_gen/main.o
+                0x02002cb0                rtos_startup_err_callback
+                0x02002cb0                rtos_startup_err_callback_internal
  .text.rtos_startup_common_init
-                0x02002c90       0x68 ./ra_gen/main.o
-                0x02002c90                rtos_startup_common_init
+                0x02002cb4       0x68 ./ra_gen/main.o
+                0x02002cb4                rtos_startup_common_init
  .text.startup.main
-                0x02002cf8       0x44 ./ra_gen/main.o
-                0x02002cf8                main
+                0x02002d1c       0x44 ./ra_gen/main.o
+                0x02002d1c                main
  .text.vApplicationGetIdleTaskMemory
-                0x02002d3c       0x1c ./ra_gen/main.o
-                0x02002d3c                vApplicationGetIdleTaskMemory
+                0x02002d60       0x1c ./ra_gen/main.o
+                0x02002d60                vApplicationGetIdleTaskMemory
  .text.vApplicationGetTimerTaskMemory
-                0x02002d58       0x1c ./ra_gen/main.o
-                0x02002d58                vApplicationGetTimerTaskMemory
+                0x02002d7c       0x1c ./ra_gen/main.o
+                0x02002d7c                vApplicationGetTimerTaskMemory
  .text.main0_thread_func
-                0x02002d74       0x14 ./ra_gen/main0_thread.o
+                0x02002d98       0x14 ./ra_gen/main0_thread.o
  .text.main0_thread_create
-                0x02002d88       0x4c ./ra_gen/main0_thread.o
-                0x02002d88                main0_thread_create
+                0x02002dac       0x4c ./ra_gen/main0_thread.o
+                0x02002dac                main0_thread_create
  .text.d2_renderbox_inline
-                0x02002dd4      0x7b8 ./ra/tes/dave2d/src/dave_box.o
-                0x02002dd4                d2_renderbox_inline
+                0x02002df8      0x7b8 ./ra/tes/dave2d/src/dave_box.o
+                0x02002df8                d2_renderbox_inline
  .text.d2_renderbox_outline
-                0x0200358c      0x114 ./ra/tes/dave2d/src/dave_box.o
-                0x0200358c                d2_renderbox_outline
+                0x020035b0      0x114 ./ra/tes/dave2d/src/dave_box.o
+                0x020035b0                d2_renderbox_outline
+ *fill*         0x020036c4        0x4 
  .text.d2_newcontext
-                0x020036a0      0x168 ./ra/tes/dave2d/src/dave_context.o
-                0x020036a0                d2_newcontext
+                0x020036c8      0x168 ./ra/tes/dave2d/src/dave_context.o
+                0x020036c8                d2_newcontext
  .text.d2_setcolor
-                0x02003808       0x30 ./ra/tes/dave2d/src/dave_context.o
-                0x02003808                d2_setcolor
+                0x02003830       0x30 ./ra/tes/dave2d/src/dave_context.o
+                0x02003830                d2_setcolor
  .text.d2_calcpatternalpha_intern
-                0x02003838       0x34 ./ra/tes/dave2d/src/dave_context.o
-                0x02003838                d2_calcpatternalpha_intern
+                0x02003860       0x34 ./ra/tes/dave2d/src/dave_context.o
+                0x02003860                d2_calcpatternalpha_intern
  .text.d2_circlesetup_intern
-                0x0200386c      0x3a8 ./ra/tes/dave2d/src/dave_curve.o
-                0x0200386c                d2_circlesetup_intern
+                0x02003894      0x3a8 ./ra/tes/dave2d/src/dave_curve.o
+                0x02003894                d2_circlesetup_intern
  .text.d2_alloc_dlistblock_intern
-                0x02003c14       0x84 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02003c14                d2_alloc_dlistblock_intern
+                0x02003c3c       0x84 ./ra/tes/dave2d/src/dave_dlist.o
+                0x02003c3c                d2_alloc_dlistblock_intern
  .text.d2_free_dlistblock_intern
-                0x02003c98       0x50 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02003c98                d2_free_dlistblock_intern
+                0x02003cc0       0x50 ./ra/tes/dave2d/src/dave_dlist.o
+                0x02003cc0                d2_free_dlistblock_intern
  .text.d2_growdlist_intern
-                0x02003ce8       0x34 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02003ce8                d2_growdlist_intern
+                0x02003d10       0x34 ./ra/tes/dave2d/src/dave_dlist.o
+                0x02003d10                d2_growdlist_intern
  .text.d2_nextdlistblock_intern
-                0x02003d1c      0x270 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02003d1c                d2_nextdlistblock_intern
+                0x02003d44      0x270 ./ra/tes/dave2d/src/dave_dlist.o
+                0x02003d44                d2_nextdlistblock_intern
  .text.d2_paddlist_intern
-                0x02003f8c       0x6c ./ra/tes/dave2d/src/dave_dlist.o
-                0x02003f8c                d2_paddlist_intern
+                0x02003fb4       0x6c ./ra/tes/dave2d/src/dave_dlist.o
+                0x02003fb4                d2_paddlist_intern
  .text.d2_resetdlist_intern
-                0x02003ff8       0x4c ./ra/tes/dave2d/src/dave_dlist.o
-                0x02003ff8                d2_resetdlist_intern
+                0x02004020       0x4c ./ra/tes/dave2d/src/dave_dlist.o
+                0x02004020                d2_resetdlist_intern
  .text.d2_executedlist_intern
-                0x02004044      0x180 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02004044                d2_executedlist_intern
+                0x0200406c      0x180 ./ra/tes/dave2d/src/dave_dlist.o
+                0x0200406c                d2_executedlist_intern
  .text.d2_scratch2dlist_intern
-                0x020041c4      0x1c4 ./ra/tes/dave2d/src/dave_dlist.o
-                0x020041c4                d2_scratch2dlist_intern
+                0x020041ec      0x1c4 ./ra/tes/dave2d/src/dave_dlist.o
+                0x020041ec                d2_scratch2dlist_intern
  .text.d2_insertwaitpipedlist_intern
-                0x02004388       0x94 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02004388                d2_insertwaitpipedlist_intern
+                0x020043b0       0x94 ./ra/tes/dave2d/src/dave_dlist.o
+                0x020043b0                d2_insertwaitpipedlist_intern
  .text.d2_insertwaitfulldlist_intern
-                0x0200441c       0x94 ./ra/tes/dave2d/src/dave_dlist.o
-                0x0200441c                d2_insertwaitfulldlist_intern
+                0x02004444       0x94 ./ra/tes/dave2d/src/dave_dlist.o
+                0x02004444                d2_insertwaitfulldlist_intern
  .text.d2_copydlist_vidmem_intern
-                0x020044b0       0x64 ./ra/tes/dave2d/src/dave_dlist.o
-                0x020044b0                d2_copydlist_vidmem_intern
+                0x020044d8       0x64 ./ra/tes/dave2d/src/dave_dlist.o
+                0x020044d8                d2_copydlist_vidmem_intern
  .text.d2_cacheflushdlist_intern
-                0x02004514       0x4c ./ra/tes/dave2d/src/dave_dlist.o
-                0x02004514                d2_cacheflushdlist_intern
+                0x0200453c       0x4c ./ra/tes/dave2d/src/dave_dlist.o
+                0x0200453c                d2_cacheflushdlist_intern
  .text.d2_mapdlist_vidmem_intern
-                0x02004560       0x58 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02004560                d2_mapdlist_vidmem_intern
+                0x02004588       0x58 ./ra/tes/dave2d/src/dave_dlist.o
+                0x02004588                d2_mapdlist_vidmem_intern
  .text.d2_preparedlist_read_intern
-                0x020045b8      0x15c ./ra/tes/dave2d/src/dave_dlist.o
-                0x020045b8                d2_preparedlist_read_intern
+                0x020045e0      0x15c ./ra/tes/dave2d/src/dave_dlist.o
+                0x020045e0                d2_preparedlist_read_intern
  .text.d2_clear_dlistlist_intern
-                0x02004714       0x30 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02004714                d2_clear_dlistlist_intern
+                0x0200473c       0x30 ./ra/tes/dave2d/src/dave_dlist.o
+                0x0200473c                d2_clear_dlistlist_intern
  .text.d2_add_dlistlist_intern
-                0x02004744       0x64 ./ra/tes/dave2d/src/dave_dlist.o
-                0x02004744                d2_add_dlistlist_intern
+                0x0200476c       0x64 ./ra/tes/dave2d/src/dave_dlist.o
+                0x0200476c                d2_add_dlistlist_intern
  .text.d2_initdlist_intern
-                0x020047a8      0x124 ./ra/tes/dave2d/src/dave_dlist.o
-                0x020047a8                d2_initdlist_intern
+                0x020047d0      0x124 ./ra/tes/dave2d/src/dave_dlist.o
+                0x020047d0                d2_initdlist_intern
  .text.d2_opendevice
-                0x020048cc       0xcc ./ra/tes/dave2d/src/dave_driver.o
-                0x020048cc                d2_opendevice
+                0x020048f4       0xcc ./ra/tes/dave2d/src/dave_driver.o
+                0x020048f4                d2_opendevice
  .text.d2_inithw
-                0x02004998       0xdc ./ra/tes/dave2d/src/dave_driver.o
-                0x02004998                d2_inithw
+                0x020049c0       0xdc ./ra/tes/dave2d/src/dave_driver.o
+                0x020049c0                d2_inithw
  .text.d2_level1interface
-                0x02004a74        0x4 ./ra/tes/dave2d/src/dave_driver.o
-                0x02004a74                d2_level1interface
+                0x02004a9c        0x4 ./ra/tes/dave2d/src/dave_driver.o
+                0x02004a9c                d2_level1interface
  .text.d2_selectrendermode
-                0x02004a78       0x90 ./ra/tes/dave2d/src/dave_driver.o
-                0x02004a78                d2_selectrendermode
+                0x02004aa0       0x90 ./ra/tes/dave2d/src/dave_driver.o
+                0x02004aa0                d2_selectrendermode
  .text.d2_flushframe
-                0x02004b08       0x18 ./ra/tes/dave2d/src/dave_driver.o
-                0x02004b08                d2_flushframe
+                0x02004b30       0x18 ./ra/tes/dave2d/src/dave_driver.o
+                0x02004b30                d2_flushframe
  .text.d2_lineedge_setup3blur_intern
-                0x02004b20       0xc0 ./ra/tes/dave2d/src/dave_edge.o
-                0x02004b20                d2_lineedge_setup3blur_intern
+                0x02004b48       0xc0 ./ra/tes/dave2d/src/dave_edge.o
+                0x02004b48                d2_lineedge_setup3blur_intern
  .text.d2_lineedge_setup3sqrt_intern
-                0x02004be0       0xb0 ./ra/tes/dave2d/src/dave_edge.o
-                0x02004be0                d2_lineedge_setup3sqrt_intern
+                0x02004c08       0xb0 ./ra/tes/dave2d/src/dave_edge.o
+                0x02004c08                d2_lineedge_setup3sqrt_intern
  .text.d2_lineedge_setup3_intern
-                0x02004c90      0x270 ./ra/tes/dave2d/src/dave_edge.o
-                0x02004c90                d2_lineedge_setup3_intern
+                0x02004cb8      0x270 ./ra/tes/dave2d/src/dave_edge.o
+                0x02004cb8                d2_lineedge_setup3_intern
  .text.d2_triedge_setup_intern
-                0x02004f00       0xc0 ./ra/tes/dave2d/src/dave_edge.o
-                0x02004f00                d2_triedge_setup_intern
+                0x02004f28       0xc0 ./ra/tes/dave2d/src/dave_edge.o
+                0x02004f28                d2_triedge_setup_intern
  .text.d2_triedge_setupblur_intern
-                0x02004fc0      0x160 ./ra/tes/dave2d/src/dave_edge.o
-                0x02004fc0                d2_triedge_setupblur_intern
+                0x02004fe8      0x160 ./ra/tes/dave2d/src/dave_edge.o
+                0x02004fe8                d2_triedge_setupblur_intern
  .text.d2_triedge_setupnoaa_intern
-                0x02005120       0x38 ./ra/tes/dave2d/src/dave_edge.o
-                0x02005120                d2_triedge_setupnoaa_intern
+                0x02005148       0x38 ./ra/tes/dave2d/src/dave_edge.o
+                0x02005148                d2_triedge_setupnoaa_intern
  .text.d2_triedge_setupsqrt_intern
-                0x02005158       0x60 ./ra/tes/dave2d/src/dave_edge.o
-                0x02005158                d2_triedge_setupsqrt_intern
+                0x02005180       0x60 ./ra/tes/dave2d/src/dave_edge.o
+                0x02005180                d2_triedge_setupsqrt_intern
  .text.d2_invertlimiter_intern
-                0x020051b8       0x18 ./ra/tes/dave2d/src/dave_edge.o
-                0x020051b8                d2_invertlimiter_intern
+                0x020051e0       0x18 ./ra/tes/dave2d/src/dave_edge.o
+                0x020051e0                d2_invertlimiter_intern
  .text.d2_initgradient_lin.isra.0
-                0x020051d0      0x150 ./ra/tes/dave2d/src/dave_gradient.o
+                0x020051f8      0x150 ./ra/tes/dave2d/src/dave_gradient.o
  .text.d2_initgradient_intern
-                0x02005320       0x10 ./ra/tes/dave2d/src/dave_gradient.o
-                0x02005320                d2_initgradient_intern
+                0x02005348       0x10 ./ra/tes/dave2d/src/dave_gradient.o
+                0x02005348                d2_initgradient_intern
  .text.d2_initgradients_intern
-                0x02005330      0x15c ./ra/tes/dave2d/src/dave_gradient.o
-                0x02005330                d2_initgradients_intern
+                0x02005358      0x15c ./ra/tes/dave2d/src/dave_gradient.o
+                0x02005358                d2_initgradients_intern
  .text.d2hw_acquire
-                0x0200548c       0x4c ./ra/tes/dave2d/src/dave_hardware.o
-                0x0200548c                d2hw_acquire
+                0x020054b4       0x4c ./ra/tes/dave2d/src/dave_hardware.o
+                0x020054b4                d2hw_acquire
  .text.d2hw_set
-                0x020054d8        0xc ./ra/tes/dave2d/src/dave_hardware.o
-                0x020054d8                d2hw_set
+                0x02005500        0xc ./ra/tes/dave2d/src/dave_hardware.o
+                0x02005500                d2hw_set
  .text.d2hw_wait
-                0x020054e4       0x14 ./ra/tes/dave2d/src/dave_hardware.o
-                0x020054e4                d2hw_wait
+                0x0200550c       0x14 ./ra/tes/dave2d/src/dave_hardware.o
+                0x0200550c                d2hw_wait
  .text.d2hw_finish
-                0x020054f8       0x40 ./ra/tes/dave2d/src/dave_hardware.o
-                0x020054f8                d2hw_finish
+                0x02005520       0x40 ./ra/tes/dave2d/src/dave_hardware.o
+                0x02005520                d2hw_finish
  .text.d2hw_start
-                0x02005538       0x50 ./ra/tes/dave2d/src/dave_hardware.o
-                0x02005538                d2hw_start
+                0x02005560       0x50 ./ra/tes/dave2d/src/dave_hardware.o
+                0x02005560                d2hw_start
  .text.d2_renderline_intern
-                0x02005588      0xcf0 ./ra/tes/dave2d/src/dave_line.o
-                0x02005588                d2_renderline_intern
+                0x020055b0      0xcf0 ./ra/tes/dave2d/src/dave_line.o
+                0x020055b0                d2_renderline_intern
  .text.d2_renderlinedot_intern
-                0x02006278      0x2b8 ./ra/tes/dave2d/src/dave_line.o
-                0x02006278                d2_renderlinedot_intern
+                0x020062a0      0x2b8 ./ra/tes/dave2d/src/dave_line.o
+                0x020062a0                d2_renderlinedot_intern
  .text.d2_renderline2_intern
-                0x02006530      0xbac ./ra/tes/dave2d/src/dave_line.o
-                0x02006530                d2_renderline2_intern
+                0x02006558      0xbac ./ra/tes/dave2d/src/dave_line.o
+                0x02006558                d2_renderline2_intern
  .text.d2_renderline_intern_split
-                0x020070dc       0xfc ./ra/tes/dave2d/src/dave_line.o
-                0x020070dc                d2_renderline_intern_split
- .text.d2_sqrt  0x020071d8       0xf0 ./ra/tes/dave2d/src/dave_math.o
-                0x020071d8                d2_sqrt
+                0x02007104       0xfc ./ra/tes/dave2d/src/dave_line.o
+                0x02007104                d2_renderline_intern_split
+ .text.d2_sqrt  0x02007200       0xf0 ./ra/tes/dave2d/src/dave_math.o
+                0x02007200                d2_sqrt
  .text.d2_getmem_p
-                0x020072c8        0x4 ./ra/tes/dave2d/src/dave_memory.o
-                0x020072c8                d2_getmem_p
+                0x020072f0        0x4 ./ra/tes/dave2d/src/dave_memory.o
+                0x020072f0                d2_getmem_p
  .text.d2_freemem_p
-                0x020072cc        0x4 ./ra/tes/dave2d/src/dave_memory.o
-                0x020072cc                d2_freemem_p
+                0x020072f4        0x4 ./ra/tes/dave2d/src/dave_memory.o
+                0x020072f4                d2_freemem_p
  .text.d2_reallocmem_p
-                0x020072d0       0x74 ./ra/tes/dave2d/src/dave_memory.o
-                0x020072d0                d2_reallocmem_p
+                0x020072f8       0x74 ./ra/tes/dave2d/src/dave_memory.o
+                0x020072f8                d2_reallocmem_p
  .text.d2_getmem_d
-                0x02007344       0x44 ./ra/tes/dave2d/src/dave_memory.o
-                0x02007344                d2_getmem_d
+                0x0200736c       0x44 ./ra/tes/dave2d/src/dave_memory.o
+                0x0200736c                d2_getmem_d
  .text.d2_freemem_d
-                0x02007388       0x44 ./ra/tes/dave2d/src/dave_memory.o
-                0x02007388                d2_freemem_d
+                0x020073b0       0x44 ./ra/tes/dave2d/src/dave_memory.o
+                0x020073b0                d2_freemem_d
  .text.d2_setuppattern
-                0x020073cc      0x188 ./ra/tes/dave2d/src/dave_pattern.o
-                0x020073cc                d2_setuppattern
+                0x020073f4      0x188 ./ra/tes/dave2d/src/dave_pattern.o
+                0x020073f4                d2_setuppattern
  .text.d2_renderpolyline_intern
-                0x02007554      0x35c ./ra/tes/dave2d/src/dave_polyline.o
-                0x02007554                d2_renderpolyline_intern
+                0x0200757c      0x35c ./ra/tes/dave2d/src/dave_polyline.o
+                0x0200757c                d2_renderpolyline_intern
  .text.d2_layer2dlist_intern.part.0
-                0x020078b0       0xd4 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x020078d8       0xd4 ./ra/tes/dave2d/src/dave_rbuffer.o
  .text.d2_scratchgrowlayer_intern
-                0x02007984       0x70 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x020079ac       0x70 ./ra/tes/dave2d/src/dave_rbuffer.o
  .text.d2_newrenderbuffer
-                0x020079f4       0x78 ./ra/tes/dave2d/src/dave_rbuffer.o
-                0x020079f4                d2_newrenderbuffer
+                0x02007a1c       0x78 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x02007a1c                d2_newrenderbuffer
  .text.d2_selectrenderbuffer
-                0x02007a6c       0xb8 ./ra/tes/dave2d/src/dave_rbuffer.o
-                0x02007a6c                d2_selectrenderbuffer
+                0x02007a94       0xb8 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x02007a94                d2_selectrenderbuffer
  .text.d2_executerenderbuffer
-                0x02007b24       0x64 ./ra/tes/dave2d/src/dave_rbuffer.o
-                0x02007b24                d2_executerenderbuffer
+                0x02007b4c       0x64 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x02007b4c                d2_executerenderbuffer
  .text.d2_rendertolayer_intern
-                0x02007b88       0x48 ./ra/tes/dave2d/src/dave_rbuffer.o
-                0x02007b88                d2_rendertolayer_intern
+                0x02007bb0       0x48 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x02007bb0                d2_rendertolayer_intern
  .text.d2_rendertobase_intern
-                0x02007bd0       0x28 ./ra/tes/dave2d/src/dave_rbuffer.o
-                0x02007bd0                d2_rendertobase_intern
+                0x02007bf8       0x28 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x02007bf8                d2_rendertobase_intern
  .text.d2_layer2dlist_intern
-                0x02007bf8        0xc ./ra/tes/dave2d/src/dave_rbuffer.o
-                0x02007bf8                d2_layer2dlist_intern
+                0x02007c20        0xc ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x02007c20                d2_layer2dlist_intern
  .text.d2_setupmaterial_intern
-                0x02007c04      0x57c ./ra/tes/dave2d/src/dave_render.o
-                0x02007c04                d2_setupmaterial_intern
+                0x02007c2c      0x57c ./ra/tes/dave2d/src/dave_render.o
+                0x02007c2c                d2_setupmaterial_intern
  .text.d2_startrender_intern
-                0x02008180      0x120 ./ra/tes/dave2d/src/dave_render.o
-                0x02008180                d2_startrender_intern
+                0x020081a8      0x120 ./ra/tes/dave2d/src/dave_render.o
+                0x020081a8                d2_startrender_intern
  .text.d2_startrender_bottom_intern
-                0x020082a0      0x124 ./ra/tes/dave2d/src/dave_render.o
-                0x020082a0                d2_startrender_bottom_intern
+                0x020082c8      0x124 ./ra/tes/dave2d/src/dave_render.o
+                0x020082c8                d2_startrender_bottom_intern
  .text.d2_setuptextureblend_intern
-                0x020083c4      0x1f4 ./ra/tes/dave2d/src/dave_texture.o
-                0x020083c4                d2_setuptextureblend_intern
+                0x020083ec      0x1f4 ./ra/tes/dave2d/src/dave_texture.o
+                0x020083ec                d2_setuptextureblend_intern
  .text.d2_calctexturealpha_intern
-                0x020085b8       0x3c ./ra/tes/dave2d/src/dave_texture.o
-                0x020085b8                d2_calctexturealpha_intern
+                0x020085e0       0x3c ./ra/tes/dave2d/src/dave_texture.o
+                0x020085e0                d2_calctexturealpha_intern
  .text.d2_setuptexture
-                0x020085f4      0x364 ./ra/tes/dave2d/src/dave_texture.o
-                0x020085f4                d2_setuptexture
+                0x0200861c      0x364 ./ra/tes/dave2d/src/dave_texture.o
+                0x0200861c                d2_setuptexture
  .text.d2_cliprect
-                0x02008958       0x80 ./ra/tes/dave2d/src/dave_viewport.o
-                0x02008958                d2_cliprect
+                0x02008980       0x80 ./ra/tes/dave2d/src/dave_viewport.o
+                0x02008980                d2_cliprect
  .text.d2_framebuffer
-                0x020089d8       0xd0 ./ra/tes/dave2d/src/dave_viewport.o
-                0x020089d8                d2_framebuffer
+                0x02008a00       0xd0 ./ra/tes/dave2d/src/dave_viewport.o
+                0x02008a00                d2_framebuffer
  .text.d2_clipbbox_intern
-                0x02008aa8       0x64 ./ra/tes/dave2d/src/dave_viewport.o
-                0x02008aa8                d2_clipbbox_intern
+                0x02008ad0       0x64 ./ra/tes/dave2d/src/dave_viewport.o
+                0x02008ad0                d2_clipbbox_intern
  .text.ethosu_dev_handle_interrupt
-                0x02008b0c       0x44 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
-                0x02008b0c                ethosu_dev_handle_interrupt
+                0x02008b34       0x44 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+                0x02008b34                ethosu_dev_handle_interrupt
  .text.ethosu_semaphore_give
-                0x02008b50        0xc ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
-                0x02008b50                ethosu_semaphore_give
+                0x02008b78        0xc ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+                0x02008b78                ethosu_semaphore_give
  .text.ethosu_irq_handler
-                0x02008b5c       0x28 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
-                0x02008b5c                ethosu_irq_handler
+                0x02008b84       0x28 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+                0x02008b84                ethosu_irq_handler
  .text.prvTaskExitError
-                0x02008b84        0x4 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008bac        0x4 ./ra/fsp/src/rm_freertos_port/port.o
  .text.SVC_Handler
-                0x02008b88       0x18 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008b88                SVC_Handler
+                0x02008bb0       0x18 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008bb0                SVC_Handler
  .text.PendSV_Handler
-                0x02008ba0       0x44 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008ba0                PendSV_Handler
+                0x02008bc8       0x44 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008bc8                PendSV_Handler
  .text.rm_freertos_port_restore_task_stackless
-                0x02008be4       0x24 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008be4                rm_freertos_port_restore_task_stackless
+                0x02008c0c       0x24 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008c0c                rm_freertos_port_restore_task_stackless
  .text.SysTick_Handler
-                0x02008c08       0x24 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008c08                SysTick_Handler
+                0x02008c30       0x24 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008c30                SysTick_Handler
  .text.vPortSVCHandler_C
-                0x02008c2c       0x34 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008c2c                vPortSVCHandler_C
+                0x02008c54       0x34 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008c54                vPortSVCHandler_C
  .text.pxPortInitialiseStack
-                0x02008c60       0x2c ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008c60                pxPortInitialiseStack
+                0x02008c88       0x2c ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008c88                pxPortInitialiseStack
  .text.vPortEnterCritical
-                0x02008c8c       0x50 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008c8c                vPortEnterCritical
+                0x02008cb4       0x50 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008cb4                vPortEnterCritical
  .text.vPortExitCritical
-                0x02008cdc       0x3c ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008cdc                vPortExitCritical
+                0x02008d04       0x3c ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008d04                vPortExitCritical
  .text.rm_freertos_port_sleep_preserving_lpm
-                0x02008d18       0x70 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008d18                rm_freertos_port_sleep_preserving_lpm
+                0x02008d40       0x70 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008d40                rm_freertos_port_sleep_preserving_lpm
  .text.vApplicationIdleHook
-                0x02008d88       0x18 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008d88                vApplicationIdleHook
+                0x02008db0       0x18 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008db0                vApplicationIdleHook
  .text.vPortSetupTimerInterrupt
-                0x02008da0       0x44 ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008da0                vPortSetupTimerInterrupt
+                0x02008dc8       0x44 ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008dc8                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x02008de4       0x3c ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008de4                xPortStartScheduler
+                0x02008e0c       0x3c ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008e0c                xPortStartScheduler
  .text.vPortValidateInterruptPriority
-                0x02008e20       0x5c ./ra/fsp/src/rm_freertos_port/port.o
-                0x02008e20                vPortValidateInterruptPriority
+                0x02008e48       0x5c ./ra/fsp/src/rm_freertos_port/port.o
+                0x02008e48                vPortValidateInterruptPriority
  .text.rm_ethosu_isr
-                0x02008e7c       0x5c ./ra/fsp/src/rm_ethosu/rm_ethosu.o
-                0x02008e7c                rm_ethosu_isr
+                0x02008ea4       0x5c ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+                0x02008ea4                rm_ethosu_isr
  .text.r_ospi_b_protocol_specific_settings
-                0x02008ed8       0xc8 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+                0x02008f00       0xc8 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .text.R_OSPI_B_Open
-                0x02008fa0      0x174 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
-                0x02008fa0                R_OSPI_B_Open
+                0x02008fc8      0x174 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+                0x02008fc8                R_OSPI_B_Open
+ .text.r_ospi_b_direct_transfer.isra.0
+                0x0200913c       0xac ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+ .text.R_OSPI_B_DirectTransfer
+                0x020091e8       0x14 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+                0x020091e8                R_OSPI_B_DirectTransfer
  .text.r_mipi_phy_close
-                0x02009114       0x28 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
-                0x02009114                r_mipi_phy_close
+                0x020091fc       0x28 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+                0x020091fc                r_mipi_phy_close
  .text.r_mipi_phy_open
-                0x0200913c      0x100 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
-                0x0200913c                r_mipi_phy_open
+                0x02009224      0x100 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+                0x02009224                r_mipi_phy_open
  .text.R_MIPI_DSI_UlpsEnter
-                0x0200923c       0x58 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x0200923c                R_MIPI_DSI_UlpsEnter
+                0x02009324       0x58 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009324                R_MIPI_DSI_UlpsEnter
  .text.R_MIPI_DSI_UlpsExit
-                0x02009294       0x50 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009294                R_MIPI_DSI_UlpsExit
+                0x0200937c       0x50 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x0200937c                R_MIPI_DSI_UlpsExit
  .text.R_MIPI_DSI_StatusGet
-                0x020092e4       0x20 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x020092e4                R_MIPI_DSI_StatusGet
+                0x020093cc       0x20 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x020093cc                R_MIPI_DSI_StatusGet
  .text.dsi_call_callback
-                0x02009304       0x3c ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x020093ec       0x3c ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
  .text.R_MIPI_DSI_Start
-                0x02009340       0x68 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009340                R_MIPI_DSI_Start
+                0x02009428       0x68 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009428                R_MIPI_DSI_Start
  .text.R_MIPI_DSI_Command
-                0x020093a8      0x114 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x020093a8                R_MIPI_DSI_Command
+                0x02009490      0x114 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009490                R_MIPI_DSI_Command
  .text.R_MIPI_DSI_Stop
-                0x020094bc       0x40 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x020094bc                R_MIPI_DSI_Stop
+                0x020095a4       0x40 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x020095a4                R_MIPI_DSI_Stop
  .text.R_MIPI_DSI_Open
-                0x020094fc      0x554 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x020094fc                R_MIPI_DSI_Open
+                0x020095e4      0x554 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x020095e4                R_MIPI_DSI_Open
  .text.R_MIPI_DSI_Close
-                0x02009a50      0x194 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009a50                R_MIPI_DSI_Close
+                0x02009b38      0x194 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009b38                R_MIPI_DSI_Close
  .text.mipi_dsi_seq0_isr
-                0x02009be4       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009be4                mipi_dsi_seq0_isr
+                0x02009ccc       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009ccc                mipi_dsi_seq0_isr
  .text.mipi_dsi_seq1_isr
-                0x02009c38       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009c38                mipi_dsi_seq1_isr
+                0x02009d20       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009d20                mipi_dsi_seq1_isr
  .text.mipi_dsi_vin1_isr
-                0x02009c8c       0xe4 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009c8c                mipi_dsi_vin1_isr
+                0x02009d74       0xe4 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009d74                mipi_dsi_vin1_isr
  .text.mipi_dsi_rcv_isr
-                0x02009d70       0x64 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009d70                mipi_dsi_rcv_isr
+                0x02009e58       0x64 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009e58                mipi_dsi_rcv_isr
  .text.mipi_dsi_ferr_isr
-                0x02009dd4       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009dd4                mipi_dsi_ferr_isr
+                0x02009ebc       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009ebc                mipi_dsi_ferr_isr
  .text.mipi_dsi_ppi_isr
-                0x02009e28       0x78 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02009e28                mipi_dsi_ppi_isr
+                0x02009f10       0x78 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02009f10                mipi_dsi_ppi_isr
  .text.r_ipc_call_callback
-                0x02009ea0       0x4c ./ra/fsp/src/r_ipc/r_ipc.o
- .text.ipc_isr  0x02009eec       0x58 ./ra/fsp/src/r_ipc/r_ipc.o
-                0x02009eec                ipc_isr
+                0x02009f88       0x4c ./ra/fsp/src/r_ipc/r_ipc.o
+ .text.ipc_isr  0x02009fd4       0x58 ./ra/fsp/src/r_ipc/r_ipc.o
+                0x02009fd4                ipc_isr
+ .text.R_IOPORT_PinWrite
+                0x0200a02c       0x28 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x0200a02c                R_IOPORT_PinWrite
  .text.bsp_vbatt_init
-                0x02009f44       0xec ./ra/fsp/src/r_ioport/r_ioport.o
+                0x0200a054       0xec ./ra/fsp/src/r_ioport/r_ioport.o
  .text.r_ioport_pins_config
-                0x0200a030       0xac ./ra/fsp/src/r_ioport/r_ioport.o
+                0x0200a140       0xac ./ra/fsp/src/r_ioport/r_ioport.o
  .text.R_IOPORT_Open
-                0x0200a0dc       0x14 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x0200a0dc                R_IOPORT_Open
+                0x0200a1ec       0x14 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x0200a1ec                R_IOPORT_Open
  .text.R_IIC_MASTER_SlaveAddressSet
-                0x0200a0f0        0xc ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x0200a0f0                R_IIC_MASTER_SlaveAddressSet
+                0x0200a200        0xc ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a200                R_IIC_MASTER_SlaveAddressSet
  .text.iic_master_notify
-                0x0200a0fc       0x3c ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a20c       0x3c ./ra/fsp/src/r_iic_master/r_iic_master.o
  .text.iic_master_run_hw_master
-                0x0200a138      0x120 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a248      0x120 ./ra/fsp/src/r_iic_master/r_iic_master.o
  .text.R_IIC_MASTER_Write
-                0x0200a258       0x30 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x0200a258                R_IIC_MASTER_Write
+                0x0200a368       0x30 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a368                R_IIC_MASTER_Write
  .text.R_IIC_MASTER_Read
-                0x0200a288       0x34 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x0200a288                R_IIC_MASTER_Read
+                0x0200a398       0x34 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a398                R_IIC_MASTER_Read
  .text.iic_master_open_hw_master
-                0x0200a2bc      0x238 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a3cc      0x238 ./ra/fsp/src/r_iic_master/r_iic_master.o
  .text.R_IIC_MASTER_Open
-                0x0200a4f4       0x84 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x0200a4f4                R_IIC_MASTER_Open
+                0x0200a604       0x84 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a604                R_IIC_MASTER_Open
  .text.iic_master_rxi_isr
-                0x0200a578      0x194 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x0200a578                iic_master_rxi_isr
+                0x0200a688      0x194 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a688                iic_master_rxi_isr
  .text.iic_master_txi_isr
-                0x0200a70c      0x124 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x0200a70c                iic_master_txi_isr
+                0x0200a81c      0x124 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a81c                iic_master_txi_isr
  .text.iic_master_tei_isr
-                0x0200a830       0xe4 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x0200a830                iic_master_tei_isr
+                0x0200a940       0xe4 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200a940                iic_master_tei_isr
  .text.iic_master_eri_isr
-                0x0200a914      0x14c ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x0200a914                iic_master_eri_isr
+                0x0200aa24      0x14c ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0200aa24                iic_master_eri_isr
  .text.R_GLCDC_Start
-                0x0200aa60       0x3c ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x0200aa60                R_GLCDC_Start
+                0x0200ab70       0x3c ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200ab70                R_GLCDC_Start
  .text.R_GLCDC_BufferChange
-                0x0200aa9c       0x60 ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x0200aa9c                R_GLCDC_BufferChange
+                0x0200abac       0x60 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200abac                R_GLCDC_BufferChange
  .text.r_glcdc_graphics_layer_set
-                0x0200aafc      0x2d8 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200ac0c      0x2d8 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .text.R_GLCDC_Open
-                0x0200add4      0x418 ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x0200add4                R_GLCDC_Open
+                0x0200aee4      0x418 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200aee4                R_GLCDC_Open
  .text.glcdc_line_detect_isr
-                0x0200b1ec       0x84 ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x0200b1ec                glcdc_line_detect_isr
+                0x0200b2fc       0x84 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200b2fc                glcdc_line_detect_isr
  .text.d1_opendevice
-                0x0200b270       0x64 ./ra/fsp/src/r_drw/r_drw_base.o
-                0x0200b270                d1_opendevice
+                0x0200b380       0x64 ./ra/fsp/src/r_drw/r_drw_base.o
+                0x0200b380                d1_opendevice
  .text.d1_setregister
-                0x0200b2d4       0x38 ./ra/fsp/src/r_drw/r_drw_base.o
-                0x0200b2d4                d1_setregister
+                0x0200b3e4       0x38 ./ra/fsp/src/r_drw/r_drw_base.o
+                0x0200b3e4                d1_setregister
  .text.d1_getregister
-                0x0200b30c       0x1c ./ra/fsp/src/r_drw/r_drw_base.o
-                0x0200b30c                d1_getregister
+                0x0200b41c       0x1c ./ra/fsp/src/r_drw/r_drw_base.o
+                0x0200b41c                d1_getregister
  .text.d1_devicesupported
-                0x0200b328       0x14 ./ra/fsp/src/r_drw/r_drw_base.o
-                0x0200b328                d1_devicesupported
+                0x0200b438       0x14 ./ra/fsp/src/r_drw/r_drw_base.o
+                0x0200b438                d1_devicesupported
  .text.d1_initirq_intern
-                0x0200b33c       0x74 ./ra/fsp/src/r_drw/r_drw_irq.o
-                0x0200b33c                d1_initirq_intern
+                0x0200b44c       0x74 ./ra/fsp/src/r_drw/r_drw_irq.o
+                0x0200b44c                d1_initirq_intern
  .text.d1_queryirq
-                0x0200b3b0       0x1c ./ra/fsp/src/r_drw/r_drw_irq.o
-                0x0200b3b0                d1_queryirq
+                0x0200b4c0       0x1c ./ra/fsp/src/r_drw/r_drw_irq.o
+                0x0200b4c0                d1_queryirq
  .text.drw_int_isr
-                0x0200b3cc       0x8c ./ra/fsp/src/r_drw/r_drw_irq.o
-                0x0200b3cc                drw_int_isr
+                0x0200b4dc       0x8c ./ra/fsp/src/r_drw/r_drw_irq.o
+                0x0200b4dc                drw_int_isr
  .text.d1_allocmem
-                0x0200b458        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b458                d1_allocmem
+                0x0200b568        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b568                d1_allocmem
  .text.d1_freemem
-                0x0200b45c        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b45c                d1_freemem
+                0x0200b56c        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b56c                d1_freemem
  .text.d1_memsize
-                0x0200b460        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b460                d1_memsize
+                0x0200b570        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b570                d1_memsize
  .text.d1_allocvidmem
-                0x0200b464        0x8 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b464                d1_allocvidmem
+                0x0200b574        0x8 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b574                d1_allocvidmem
  .text.d1_freevidmem
-                0x0200b46c        0x8 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b46c                d1_freevidmem
+                0x0200b57c        0x8 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b57c                d1_freevidmem
  .text.d1_queryarchitecture
-                0x0200b474        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b474                d1_queryarchitecture
+                0x0200b584        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b584                d1_queryarchitecture
  .text.d1_maptovidmem
-                0x0200b478        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b478                d1_maptovidmem
+                0x0200b588        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b588                d1_maptovidmem
  .text.d1_mapfromvidmem
-                0x0200b47c        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b47c                d1_mapfromvidmem
+                0x0200b58c        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b58c                d1_mapfromvidmem
  .text.d1_copytovidmem
-                0x0200b480       0x10 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b480                d1_copytovidmem
+                0x0200b590       0x10 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b590                d1_copytovidmem
  .text.d1_cacheblockflush
-                0x0200b490        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
-                0x0200b490                d1_cacheblockflush
+                0x0200b5a0        0x4 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0200b5a0                d1_cacheblockflush
  .text.R_DMAC_SoftwareStart
-                0x0200b494       0x14 ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b494                R_DMAC_SoftwareStart
+                0x0200b5a4       0x14 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b5a4                R_DMAC_SoftwareStart
  .text.R_DMAC_SoftwareStop
-                0x0200b4a8        0xc ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b4a8                R_DMAC_SoftwareStop
+                0x0200b5b8        0xc ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b5b8                R_DMAC_SoftwareStop
  .text.R_DMAC_Enable
-                0x0200b4b4        0xc ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b4b4                R_DMAC_Enable
+                0x0200b5c4        0xc ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b5c4                R_DMAC_Enable
  .text.R_DMAC_InfoGet
-                0x0200b4c0       0x38 ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b4c0                R_DMAC_InfoGet
+                0x0200b5d0       0x38 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b5d0                R_DMAC_InfoGet
  .text.R_DMAC_Reload
-                0x0200b4f8        0x4 ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b4f8                R_DMAC_Reload
+                0x0200b608        0x4 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b608                R_DMAC_Reload
  .text.R_DMAC_CallbackSet
-                0x0200b4fc        0xc ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b4fc                R_DMAC_CallbackSet
+                0x0200b60c        0xc ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b60c                R_DMAC_CallbackSet
  .text.R_DMAC_Close
-                0x0200b508       0x60 ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b508                R_DMAC_Close
+                0x0200b618       0x60 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b618                R_DMAC_Close
  .text.r_dmac_config_transfer_info
-                0x0200b568      0x1f4 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b678      0x1f4 ./ra/fsp/src/r_dmac/r_dmac.o
  .text.R_DMAC_Reconfigure
-                0x0200b75c       0x14 ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b75c                R_DMAC_Reconfigure
+                0x0200b86c       0x14 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b86c                R_DMAC_Reconfigure
  .text.R_DMAC_Open
-                0x0200b770       0x6c ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b770                R_DMAC_Open
+                0x0200b880       0x6c ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b880                R_DMAC_Open
  .text.R_DMAC_Disable
-                0x0200b7dc       0x34 ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b7dc                R_DMAC_Disable
+                0x0200b8ec       0x34 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b8ec                R_DMAC_Disable
  .text.R_DMAC_Reset
-                0x0200b810       0x64 ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200b810                R_DMAC_Reset
+                0x0200b920       0x64 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200b920                R_DMAC_Reset
  .text.R_CEU_CaptureStart
-                0x0200b874       0x54 ./ra/fsp/src/r_ceu/r_ceu.o
-                0x0200b874                R_CEU_CaptureStart
+                0x0200b984       0x54 ./ra/fsp/src/r_ceu/r_ceu.o
+                0x0200b984                R_CEU_CaptureStart
  .text.R_CEU_Open
-                0x0200b8c8      0x1e0 ./ra/fsp/src/r_ceu/r_ceu.o
-                0x0200b8c8                R_CEU_Open
- .text.ceu_isr  0x0200baa8       0x9c ./ra/fsp/src/r_ceu/r_ceu.o
-                0x0200baa8                ceu_isr
+                0x0200b9d8      0x1e0 ./ra/fsp/src/r_ceu/r_ceu.o
+                0x0200b9d8                R_CEU_Open
+ .text.ceu_isr  0x0200bbb8       0x9c ./ra/fsp/src/r_ceu/r_ceu.o
+                0x0200bbb8                ceu_isr
  .text.SystemCoreClockUpdate
-                0x0200bb44       0x88 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
-                0x0200bb44                SystemCoreClockUpdate
+                0x0200bc54       0x88 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x0200bc54                SystemCoreClockUpdate
  .text.R_BSP_SubClockStabilizeWaitAfterReset
-                0x0200bbcc        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
-                0x0200bbcc                R_BSP_SubClockStabilizeWaitAfterReset
+                0x0200bcdc        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x0200bcdc                R_BSP_SubClockStabilizeWaitAfterReset
  .text.R_BSP_OctaclkUpdate
-                0x0200bbd0      0x17c ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
-                0x0200bbd0                R_BSP_OctaclkUpdate
- *fill*         0x0200bd4c        0x4 
+                0x0200bce0      0x17c ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x0200bce0                R_BSP_OctaclkUpdate
+ *fill*         0x0200be5c        0x4 
  .text.bsp_clock_init
-                0x0200bd50      0x370 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
-                0x0200bd50                bsp_clock_init
+                0x0200be60      0x370 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x0200be60                bsp_clock_init
  .text.R_BSP_Init_RTC
-                0x0200c0c0       0xb0 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
-                0x0200c0c0                R_BSP_Init_RTC
+                0x0200c1d0       0xb0 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x0200c1d0                R_BSP_Init_RTC
  .text.bsp_init_internal
-                0x0200c170        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
-                0x0200c170                bsp_init_internal
-                0x0200c170                bsp_init
+                0x0200c280        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+                0x0200c280                bsp_init_internal
+                0x0200c280                bsp_init
  .text.__assert_func
-                0x0200c174        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
-                0x0200c174                __assert_func
+                0x0200c284        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+                0x0200c284                __assert_func
  .text.bsp_prv_software_delay_loop
-                0x0200c178        0xc ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
-                0x0200c178                bsp_prv_software_delay_loop
+                0x0200c288        0xc ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+                0x0200c288                bsp_prv_software_delay_loop
  .text.R_BSP_SoftwareDelay
-                0x0200c184       0x88 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
-                0x0200c184                R_BSP_SoftwareDelay
+                0x0200c294       0x88 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+                0x0200c294                R_BSP_SoftwareDelay
  .text.NMI_Handler
-                0x0200c20c       0x44 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
-                0x0200c20c                NMI_Handler
+                0x0200c31c       0x44 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+                0x0200c31c                NMI_Handler
  .text.bsp_irq_cfg
-                0x0200c250       0x2c ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
-                0x0200c250                bsp_irq_cfg
+                0x0200c360       0x2c ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+                0x0200c360                bsp_irq_cfg
  .text.R_BSP_RegisterProtectEnable
-                0x0200c27c       0x60 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
-                0x0200c27c                R_BSP_RegisterProtectEnable
+                0x0200c38c       0x60 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                0x0200c38c                R_BSP_RegisterProtectEnable
  .text.R_BSP_RegisterProtectDisable
-                0x0200c2dc       0x54 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
-                0x0200c2dc                R_BSP_RegisterProtectDisable
+                0x0200c3ec       0x54 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                0x0200c3ec                R_BSP_RegisterProtectDisable
  .text.Default_Handler
-                0x0200c330        0x4 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
-                0x0200c330                HardFault_Handler
-                0x0200c330                UsageFault_Handler
-                0x0200c330                SecureFault_Handler
-                0x0200c330                Default_Handler
-                0x0200c330                MemManage_Handler
-                0x0200c330                BusFault_Handler
-                0x0200c330                DebugMon_Handler
+                0x0200c440        0x4 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+                0x0200c440                HardFault_Handler
+                0x0200c440                UsageFault_Handler
+                0x0200c440                SecureFault_Handler
+                0x0200c440                Default_Handler
+                0x0200c440                MemManage_Handler
+                0x0200c440                BusFault_Handler
+                0x0200c440                DebugMon_Handler
  .text.Reset_Handler
-                0x0200c334        0xc ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
-                0x0200c334                Reset_Handler
+                0x0200c444        0xc ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+                0x0200c444                Reset_Handler
  .text.SystemRuntimeInit
-                0x0200c340       0x64 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- *fill*         0x0200c3a4        0x4 
+                0x0200c450       0x64 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ *fill*         0x0200c4b4        0x4 
  .text.SystemInit
-                0x0200c3a8      0x310 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
-                0x0200c3a8                SystemInit
+                0x0200c4b8      0x310 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+                0x0200c4b8                SystemInit
  .text.pvPortMalloc
-                0x0200c6b8      0x1b0 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
-                0x0200c6b8                pvPortMalloc
+                0x0200c7c8      0x1b0 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0200c7c8                pvPortMalloc
  .text.vPortFree
-                0x0200c868      0x124 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
-                0x0200c868                vPortFree
+                0x0200c978      0x124 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0200c978                vPortFree
  .text.vListInitialise
-                0x0200c98c       0x18 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
-                0x0200c98c                vListInitialise
+                0x0200ca9c       0x18 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+                0x0200ca9c                vListInitialise
  .text.vListInitialiseItem
-                0x0200c9a4        0x8 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
-                0x0200c9a4                vListInitialiseItem
+                0x0200cab4        0x8 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+                0x0200cab4                vListInitialiseItem
  .text.vListInsert
-                0x0200c9ac       0x30 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
-                0x0200c9ac                vListInsert
+                0x0200cabc       0x30 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+                0x0200cabc                vListInsert
  .text.uxListRemove
-                0x0200c9dc       0x24 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
-                0x0200c9dc                uxListRemove
+                0x0200caec       0x24 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+                0x0200caec                uxListRemove
  .text.prvCopyDataToQueue
-                0x0200ca00       0x64 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200cb10       0x64 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .text.prvUnlockQueue
-                0x0200ca64       0x8c ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200cb74       0x8c ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .text.xQueueGenericReset
-                0x0200caf0       0xbc ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200caf0                xQueueGenericReset
+                0x0200cc00       0xbc ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200cc00                xQueueGenericReset
  .text.xQueueGenericCreateStatic
-                0x0200cbac       0x84 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200cbac                xQueueGenericCreateStatic
+                0x0200ccbc       0x84 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200ccbc                xQueueGenericCreateStatic
  .text.xQueueCreateCountingSemaphoreStatic
-                0x0200cc30       0x7c ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200cc30                xQueueCreateCountingSemaphoreStatic
+                0x0200cd40       0x7c ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200cd40                xQueueCreateCountingSemaphoreStatic
  .text.xQueueGenericSend
-                0x0200ccac      0x198 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200ccac                xQueueGenericSend
+                0x0200cdbc      0x198 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200cdbc                xQueueGenericSend
  .text.xQueueGiveFromISR
-                0x0200ce44       0xc4 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200ce44                xQueueGiveFromISR
+                0x0200cf54       0xc4 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200cf54                xQueueGiveFromISR
  .text.xQueueReceive
-                0x0200cf08      0x178 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200cf08                xQueueReceive
+                0x0200d018      0x178 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200d018                xQueueReceive
  .text.xQueueSemaphoreTake
-                0x0200d080      0x154 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200d080                xQueueSemaphoreTake
+                0x0200d190      0x154 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200d190                xQueueSemaphoreTake
  .text.vQueueAddToRegistry
-                0x0200d1d4       0x6c ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200d1d4                vQueueAddToRegistry
+                0x0200d2e4       0x6c ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200d2e4                vQueueAddToRegistry
  .text.vQueueWaitForMessageRestricted
-                0x0200d240       0x50 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0200d240                vQueueWaitForMessageRestricted
+                0x0200d350       0x50 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200d350                vQueueWaitForMessageRestricted
  .text.prvAddNewTaskToReadyList
-                0x0200d290      0x12c ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d3a0      0x12c ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x0200d3bc       0xb8 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d4cc       0xb8 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.prvInitialiseNewTask.constprop.0
-                0x0200d474       0x94 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d584       0x94 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.prvCheckTasksWaitingTermination
-                0x0200d508       0x84 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d618       0x84 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.prvIdleTask
-                0x0200d58c       0x2c ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d69c       0x2c ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.xTaskIncrementTick.part.0
-                0x0200d5b8      0x1c0 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d6c8      0x1c0 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.xTaskCreateStatic
-                0x0200d778       0xa0 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200d778                xTaskCreateStatic
+                0x0200d888       0xa0 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d888                xTaskCreateStatic
  .text.xTaskCreate
-                0x0200d818       0x60 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200d818                xTaskCreate
+                0x0200d928       0x60 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d928                xTaskCreate
  .text.vTaskStartScheduler
-                0x0200d878       0x9c ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200d878                vTaskStartScheduler
+                0x0200d988       0x9c ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200d988                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x0200d914       0x10 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200d914                vTaskSuspendAll
+                0x0200da24       0x10 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200da24                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x0200d924      0x1c0 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200d924                xTaskResumeAll
+                0x0200da34      0x1c0 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200da34                xTaskResumeAll
  .text.vTaskDelay
-                0x0200dae4       0x54 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200dae4                vTaskDelay
+                0x0200dbf4       0x54 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200dbf4                vTaskDelay
  .text.xTaskGetTickCount
-                0x0200db38        0xc ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200db38                xTaskGetTickCount
+                0x0200dc48        0xc ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200dc48                xTaskGetTickCount
  .text.uxTaskGetNumberOfTasks
-                0x0200db44        0xc ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200db44                uxTaskGetNumberOfTasks
+                0x0200dc54        0xc ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200dc54                uxTaskGetNumberOfTasks
  .text.xTaskIncrementTick
-                0x0200db50       0x20 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200db50                xTaskIncrementTick
+                0x0200dc60       0x20 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200dc60                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x0200db70       0x98 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200db70                vTaskSwitchContext
+                0x0200dc80       0x98 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200dc80                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x0200dc08       0x3c ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200dc08                vTaskPlaceOnEventList
+                0x0200dd18       0x3c ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200dd18                vTaskPlaceOnEventList
  .text.vTaskPlaceOnEventListRestricted
-                0x0200dc44       0x64 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200dc44                vTaskPlaceOnEventListRestricted
+                0x0200dd54       0x64 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200dd54                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x0200dca8       0xf4 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200dca8                xTaskRemoveFromEventList
+                0x0200ddb8       0xf4 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200ddb8                xTaskRemoveFromEventList
  .text.vTaskInternalSetTimeOutState
-                0x0200dd9c       0x18 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200dd9c                vTaskInternalSetTimeOutState
+                0x0200deac       0x18 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200deac                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x0200ddb4       0x90 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200ddb4                xTaskCheckForTimeOut
+                0x0200dec4       0x90 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200dec4                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x0200de44        0xc ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200de44                vTaskMissedYield
+                0x0200df54        0xc ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200df54                vTaskMissedYield
  .text.xTaskGetSchedulerState
-                0x0200de50       0x20 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0200de50                xTaskGetSchedulerState
+                0x0200df60       0x20 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200df60                xTaskGetSchedulerState
  .text.prvCheckForValidListAndQueue
-                0x0200de70       0x74 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200df80       0x74 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
  .text.prvProcessExpiredTimer
-                0x0200dee4       0x90 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200dff4       0x90 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
  .text.prvTimerTask
-                0x0200df74      0x264 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200e084      0x264 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
  .text.xTimerCreateTimerTask
-                0x0200e1d8       0x6c ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
-                0x0200e1d8                xTimerCreateTimerTask
- .text          0x0200e244       0xa0 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_aeabi_ldivmod.o)
-                0x0200e244                __aeabi_ldivmod
+                0x0200e2e8       0x6c ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200e2e8                xTimerCreateTimerTask
+ .text          0x0200e354       0xa0 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_aeabi_ldivmod.o)
+                0x0200e354                __aeabi_ldivmod
  .text.__udivmoddi4
-                0x0200e2e4      0x300 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_udivmoddi4.o)
-                0x0200e2e4                __udivmoddi4
- .text          0x0200e5e4        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_dvmd_tls.o)
-                0x0200e5e4                __aeabi_idiv0
-                0x0200e5e4                __aeabi_ldiv0
- .text.memset   0x0200e5e8       0x10 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libg_nano.a(libc_a-memset.o)
-                0x0200e5e8                memset
- .text.memcpy   0x0200e5f8       0x1a D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libg_nano.a(libc_a-memcpy-stub.o)
-                0x0200e5f8                memcpy
+                0x0200e3f4      0x300 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_udivmoddi4.o)
+                0x0200e3f4                __udivmoddi4
+ .text          0x0200e6f4        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_dvmd_tls.o)
+                0x0200e6f4                __aeabi_idiv0
+                0x0200e6f4                __aeabi_ldiv0
+ .text.memset   0x0200e6f8       0x10 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libg_nano.a(libc_a-memset.o)
+                0x0200e6f8                memset
+ .text.memcpy   0x0200e708       0x1a D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x0200e708                memcpy
  *(.rodata*)
- *fill*         0x0200e612        0x2 
+ *fill*         0x0200e722        0x2 
  .rodata.g_lcd_init_focuslcd
-                0x0200e614      0x48e ./src/lcd_mipi/lcd_mipi.o
-                0x0200e614                g_lcd_init_focuslcd
- *fill*         0x0200eaa2        0x6 
+                0x0200e724      0x48e ./src/lcd_mipi/lcd_mipi.o
+                0x0200e724                g_lcd_init_focuslcd
+ *fill*         0x0200ebb2        0x6 
  .rodata.OV5640_Exposure_reg
-                0x0200eaa8       0x2a ./src/ceu/ceu.o
- *fill*         0x0200ead2        0x6 
+                0x0200ebb8       0x2a ./src/ceu/ceu.o
+ *fill*         0x0200ebe2        0x6 
  .rodata.OV5640_Saturation_reg
-                0x0200ead8       0x2a ./src/ceu/ceu.o
- *fill*         0x0200eb02        0x2 
+                0x0200ebe8       0x2a ./src/ceu/ceu.o
+ *fill*         0x0200ec12        0x2 
  .rodata.OV5640_Contrast_reg
-                0x0200eb04        0xe ./src/ceu/ceu.o
- *fill*         0x0200eb12        0x6 
+                0x0200ec14        0xe ./src/ceu/ceu.o
+ *fill*         0x0200ec22        0x6 
  .rodata.OV5640_Effect_reg
-                0x0200eb18       0x24 ./src/ceu/ceu.o
- *fill*         0x0200eb3c        0x4 
+                0x0200ec28       0x24 ./src/ceu/ceu.o
+ *fill*         0x0200ec4c        0x4 
  .rodata.OV5640_LightMode_reg
-                0x0200eb40       0x23 ./src/ceu/ceu.o
+                0x0200ec50       0x23 ./src/ceu/ceu.o
  .rodata.DRW_INT_IPL
-                0x0200eb63        0x1 ./ra_gen/common_data.o
-                0x0200eb63                DRW_INT_IPL
+                0x0200ec73        0x1 ./ra_gen/common_data.o
+                0x0200ec73                DRW_INT_IPL
  .rodata.g_display0_cfg
-                0x0200eb64       0x88 ./ra_gen/common_data.o
-                0x0200eb64                g_display0_cfg
+                0x0200ec74       0x88 ./ra_gen/common_data.o
+                0x0200ec74                g_display0_cfg
  .rodata.g_display0_extend_cfg
-                0x0200ebec       0x10 ./ra_gen/common_data.o
-                0x0200ebec                g_display0_extend_cfg
+                0x0200ecfc       0x10 ./ra_gen/common_data.o
+                0x0200ecfc                g_display0_extend_cfg
  .rodata.g_mipi_dsi0
-                0x0200ebfc        0xc ./ra_gen/common_data.o
-                0x0200ebfc                g_mipi_dsi0
+                0x0200ed0c        0xc ./ra_gen/common_data.o
+                0x0200ed0c                g_mipi_dsi0
  .rodata.g_mipi_dsi0_cfg
-                0x0200ec08       0x6c ./ra_gen/common_data.o
-                0x0200ec08                g_mipi_dsi0_cfg
+                0x0200ed18       0x6c ./ra_gen/common_data.o
+                0x0200ed18                g_mipi_dsi0_cfg
  .rodata.g_mipi_dsi0_extended_cfg
-                0x0200ec74       0x24 ./ra_gen/common_data.o
-                0x0200ec74                g_mipi_dsi0_extended_cfg
+                0x0200ed84       0x24 ./ra_gen/common_data.o
+                0x0200ed84                g_mipi_dsi0_extended_cfg
  .rodata.g_mipi_dsi0_timing
-                0x0200ec98       0x10 ./ra_gen/common_data.o
-                0x0200ec98                g_mipi_dsi0_timing
+                0x0200eda8       0x10 ./ra_gen/common_data.o
+                0x0200eda8                g_mipi_dsi0_timing
  .rodata.g_mipi_phy0
-                0x0200eca8        0xc ./ra_gen/common_data.o
-                0x0200eca8                g_mipi_phy0
+                0x0200edb8        0xc ./ra_gen/common_data.o
+                0x0200edb8                g_mipi_phy0
  .rodata.g_mipi_phy0_cfg
-                0x0200ecb4       0x10 ./ra_gen/common_data.o
-                0x0200ecb4                g_mipi_phy0_cfg
+                0x0200edc4       0x10 ./ra_gen/common_data.o
+                0x0200edc4                g_mipi_phy0_cfg
  .rodata.g_mipi_phy0_timing
-                0x0200ecc4       0x18 ./ra_gen/common_data.o
-                0x0200ecc4                g_mipi_phy0_timing
+                0x0200edd4       0x18 ./ra_gen/common_data.o
+                0x0200edd4                g_mipi_phy0_timing
  .rodata.g_ceu_qvga_cfg
-                0x0200ecdc       0x18 ./ra_gen/hal_data.o
-                0x0200ecdc                g_ceu_qvga_cfg
+                0x0200edec       0x18 ./ra_gen/hal_data.o
+                0x0200edec                g_ceu_qvga_cfg
  .rodata.g_ceu_qvga_extended_cfg
-                0x0200ecf4       0x18 ./ra_gen/hal_data.o
-                0x0200ecf4                g_ceu_qvga_extended_cfg
+                0x0200ee04       0x18 ./ra_gen/hal_data.o
+                0x0200ee04                g_ceu_qvga_extended_cfg
  .rodata.g_ospi1_cfg
-                0x0200ed0c       0x1c ./ra_gen/hal_data.o
-                0x0200ed0c                g_ospi1_cfg
+                0x0200ee1c       0x1c ./ra_gen/hal_data.o
+                0x0200ee1c                g_ospi1_cfg
  .rodata.g_ospi1_extended_cfg
-                0x0200ed28       0x18 ./ra_gen/hal_data.o
+                0x0200ee38       0x18 ./ra_gen/hal_data.o
  .rodata.g_ospi1_command_set
-                0x0200ed40        0x8 ./ra_gen/hal_data.o
+                0x0200ee50        0x8 ./ra_gen/hal_data.o
  .rodata.g_transfer0
-                0x0200ed48        0xc ./ra_gen/hal_data.o
-                0x0200ed48                g_transfer0
+                0x0200ee58        0xc ./ra_gen/hal_data.o
+                0x0200ee58                g_transfer0
  .rodata.g_transfer0_cfg
-                0x0200ed54        0x8 ./ra_gen/hal_data.o
-                0x0200ed54                g_transfer0_cfg
+                0x0200ee64        0x8 ./ra_gen/hal_data.o
+                0x0200ee64                g_transfer0_cfg
  .rodata.g_transfer0_extend
-                0x0200ed5c       0x18 ./ra_gen/hal_data.o
-                0x0200ed5c                g_transfer0_extend
+                0x0200ee6c       0x18 ./ra_gen/hal_data.o
+                0x0200ee6c                g_transfer0_extend
  .rodata.g_i2c_master1_cfg
-                0x0200ed74       0x28 ./ra_gen/hal_data.o
-                0x0200ed74                g_i2c_master1_cfg
+                0x0200ee84       0x28 ./ra_gen/hal_data.o
+                0x0200ee84                g_i2c_master1_cfg
  .rodata.g_i2c_master1_extend
-                0x0200ed9c        0x8 ./ra_gen/hal_data.o
-                0x0200ed9c                g_i2c_master1_extend
+                0x0200eeac        0x8 ./ra_gen/hal_data.o
+                0x0200eeac                g_i2c_master1_extend
  .rodata.main0_thread_create.str1.4
-                0x0200eda4      0x994 ./ra_gen/main0_thread.o
+                0x0200eeb4      0x994 ./ra_gen/main0_thread.o
                                   0xc (size before relaxing)
  .rodata.main0_thread_parameters
-                0x0200f738        0x4 ./ra_gen/main0_thread.o
-                0x0200f738                main0_thread_parameters
+                0x0200f848        0x4 ./ra_gen/main0_thread.o
+                0x0200f848                main0_thread_parameters
  .rodata.g_bsp_pin_cfg
-                0x0200f73c        0xc ./ra_gen/pin_data.o
-                0x0200f73c                g_bsp_pin_cfg
+                0x0200f84c        0xc ./ra_gen/pin_data.o
+                0x0200f84c                g_bsp_pin_cfg
  .rodata.g_bsp_pin_cfg_data
-                0x0200f748      0x110 ./ra_gen/pin_data.o
-                0x0200f748                g_bsp_pin_cfg_data
+                0x0200f858      0x110 ./ra_gen/pin_data.o
+                0x0200f858                g_bsp_pin_cfg_data
  .rodata.g_interrupt_event_link_select
-                0x0200f858       0x1e ./ra_gen/vector_data.o
-                0x0200f858                g_interrupt_event_link_select
- *fill*         0x0200f876        0x2 
+                0x0200f968       0x1e ./ra_gen/vector_data.o
+                0x0200f968                g_interrupt_event_link_select
+ *fill*         0x0200f986        0x2 
  .rodata.d2_cacheableregs
-                0x0200f878       0x3b ./ra/tes/dave2d/src/dave_driver.o
-                0x0200f878                d2_cacheableregs
+                0x0200f988       0x3b ./ra/tes/dave2d/src/dave_driver.o
+                0x0200f988                d2_cacheableregs
  .rodata.vPortSVCHandler_C.str1.4
-                0x0200f8b3       0x3a ./ra/fsp/src/rm_freertos_port/port.o
+                0x0200f9c3       0x3a ./ra/fsp/src/rm_freertos_port/port.o
  .rodata.vPortEnterCritical.str1.4
-                0x0200f8b3       0x46 ./ra/fsp/src/rm_freertos_port/port.o
+                0x0200f9c3       0x46 ./ra/fsp/src/rm_freertos_port/port.o
  .rodata.vPortExitCritical.str1.4
-                0x0200f8b3       0x12 ./ra/fsp/src/rm_freertos_port/port.o
+                0x0200f9c3       0x12 ./ra/fsp/src/rm_freertos_port/port.o
  .rodata.vPortValidateInterruptPriority.str1.4
-                0x0200f8b3       0x64 ./ra/fsp/src/rm_freertos_port/port.o
- *fill*         0x0200f8b3        0x1 
+                0x0200f9c3       0x64 ./ra/fsp/src/rm_freertos_port/port.o
+ *fill*         0x0200f9c3        0x1 
  .rodata.__func__.0
-                0x0200f8b4       0x1f ./ra/fsp/src/rm_freertos_port/port.o
- *fill*         0x0200f8d3        0x1 
+                0x0200f9c4       0x1f ./ra/fsp/src/rm_freertos_port/port.o
+ *fill*         0x0200f9e3        0x1 
  .rodata.__func__.1
-                0x0200f8d4       0x12 ./ra/fsp/src/rm_freertos_port/port.o
- *fill*         0x0200f8e6        0x2 
+                0x0200f9e4       0x12 ./ra/fsp/src/rm_freertos_port/port.o
+ *fill*         0x0200f9f6        0x2 
  .rodata.__func__.2
-                0x0200f8e8       0x13 ./ra/fsp/src/rm_freertos_port/port.o
- *fill*         0x0200f8fb        0x1 
+                0x0200f9f8       0x13 ./ra/fsp/src/rm_freertos_port/port.o
+ *fill*         0x0200fa0b        0x1 
  .rodata.__func__.3
-                0x0200f8fc       0x12 ./ra/fsp/src/rm_freertos_port/port.o
- *fill*         0x0200f90e        0x2 
+                0x0200fa0c       0x12 ./ra/fsp/src/rm_freertos_port/port.o
+ *fill*         0x0200fa1e        0x2 
  .rodata.g_mipi_phy
-                0x0200f910        0x8 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
-                0x0200f910                g_mipi_phy
+                0x0200fa20        0x8 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+                0x0200fa20                g_mipi_phy
  .rodata.g_mipi_dsi
-                0x0200f918       0x20 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x0200f918                g_mipi_dsi
+                0x0200fa28       0x20 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x0200fa28                g_mipi_dsi
  .rodata.g_vbatt_pins_input
-                0x0200f938        0x6 ./ra/fsp/src/r_ioport/r_ioport.o
- *fill*         0x0200f93e        0x2 
+                0x0200fa48        0x6 ./ra/fsp/src/r_ioport/r_ioport.o
+ *fill*         0x0200fa4e        0x2 
  .rodata.g_pdtha_lut
-                0x0200f940        0x4 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200fa50        0x4 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .rodata.g_outset_lut
-                0x0200f944        0x4 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200fa54        0x4 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .rodata.g_pixsize_lut
-                0x0200f948       0x10 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200fa58       0x10 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .rodata.g_format_lut
-                0x0200f958        0x8 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200fa68        0x8 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .rodata.g_tcon_lut
-                0x0200f960       0x10 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0200fa70       0x10 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .rodata.g_transfer_on_dmac
-                0x0200f970       0x2c ./ra/fsp/src/r_dmac/r_dmac.o
-                0x0200f970                g_transfer_on_dmac
+                0x0200fa80       0x2c ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0200fa80                g_transfer_on_dmac
  .rodata.g_init_info
-                0x0200f99c       0x18 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
-                0x0200f99c                g_init_info
+                0x0200faac       0x18 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+                0x0200faac                g_init_info
  .rodata.nocache_list
-                0x0200f9b4       0x20 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+                0x0200fac4       0x20 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
  .rodata.copy_list
-                0x0200f9d4      0x180 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+                0x0200fae4      0x180 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
  .rodata.zero_list
-                0x0200fb54       0x78 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
- .rodata        0x0200fbcc        0x2 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- *fill*         0x0200fbce        0x2 
+                0x0200fc64       0x78 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+ .rodata        0x0200fcdc        0x2 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ *fill*         0x0200fcde        0x2 
  .rodata.g_prcr_masks
-                0x0200fbd0        0xa ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                0x0200fce0        0xa ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
  .rodata.pvPortMalloc.str1.4
-                0x0200fbda      0x1c9 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0200fcea      0x1c9 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
  .rodata.vPortFree.str1.4
-                0x0200fbda      0x184 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
- *fill*         0x0200fbda        0x2 
+                0x0200fcea      0x184 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+ *fill*         0x0200fcea        0x2 
  .rodata.__func__.0
-                0x0200fbdc       0x1b ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
- *fill*         0x0200fbf7        0x1 
+                0x0200fcec       0x1b ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+ *fill*         0x0200fd07        0x1 
  .rodata.__func__.1
-                0x0200fbf8        0xa ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
- *fill*         0x0200fc02        0x2 
+                0x0200fd08        0xa ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+ *fill*         0x0200fd12        0x2 
  .rodata.__func__.2
-                0x0200fc04        0xd ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0200fd14        0xd ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
  .rodata.vQueueUnregisterQueue.part.0.str1.4
-                0x0200fc11       0x33 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd21       0x33 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.xQueueGenericReset.str1.4
-                0x0200fc11       0x2c ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd21       0x2c ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.xQueueGenericCreateStatic.str1.4
-                0x0200fc11       0x37 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd21       0x37 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.xQueueCreateCountingSemaphoreStatic.str1.4
-                0x0200fc11        0x8 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd21        0x8 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.xQueueGenericSend.str1.4
-                0x0200fc11       0xfb ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd21       0xfb ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.xQueueGenericSendFromISR.str1.4
-                0x0200fc11       0x22 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd21       0x22 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.xQueueGiveFromISR.str1.4
-                0x0200fc11       0x7d ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd21       0x7d ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.xQueueReceive.str1.4
-                0x0200fc11       0x66 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- *fill*         0x0200fc11        0x3 
+                0x0200fd21       0x66 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ *fill*         0x0200fd21        0x3 
  .rodata.__func__.2
-                0x0200fc14       0x14 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd24       0x14 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.__func__.12
-                0x0200fc28       0x14 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd38       0x14 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.__func__.13
-                0x0200fc3c        0xe ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- *fill*         0x0200fc4a        0x2 
+                0x0200fd4c        0xe ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ *fill*         0x0200fd5a        0x2 
  .rodata.__func__.14
-                0x0200fc4c       0x12 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- *fill*         0x0200fc5e        0x2 
+                0x0200fd5c       0x12 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ *fill*         0x0200fd6e        0x2 
  .rodata.__func__.16
-                0x0200fc60       0x12 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- *fill*         0x0200fc72        0x2 
+                0x0200fd70       0x12 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ *fill*         0x0200fd82        0x2 
  .rodata.__func__.18
-                0x0200fc74       0x24 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fd84       0x24 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.__func__.21
-                0x0200fc98       0x1a ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- *fill*         0x0200fcb2        0x2 
+                0x0200fda8       0x1a ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ *fill*         0x0200fdc2        0x2 
  .rodata.__func__.22
-                0x0200fcb4       0x13 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0200fdc4       0x13 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .rodata.prvTaskIsTaskSuspended.part.0.str1.4
-                0x0200fcc7       0x33 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7       0x33 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.prvInitialiseNewTask.constprop.0.str1.4
-                0x0200fcc7       0x11 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7       0x11 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.prvCheckTasksWaitingTermination.str1.4
-                0x0200fcc7       0x32 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7       0x32 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.xTaskIncrementTick.part.0.str1.4
-                0x0200fcc7       0x76 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7       0x76 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.xTaskCreateStatic.str1.4
-                0x0200fcc7       0x55 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7       0x55 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.vTaskStartScheduler.str1.4
-                0x0200fcc7       0x12 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7       0x12 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.xTaskResumeAll.str1.4
-                0x0200fcc7       0x1b ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7       0x1b ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.xTaskDelayUntil.str1.4
-                0x0200fcc7       0x47 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7       0x47 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.vTaskSwitchContext.str1.4
-                0x0200fcc7        0xe ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7        0xe ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.vTaskPlaceOnEventList.str1.4
-                0x0200fcc7        0xc ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7        0xc ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.xTaskRemoveFromEventList.str1.4
-                0x0200fcc7        0xf ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7        0xf ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.vTaskSetTimeOutState.str1.4
-                0x0200fcc7        0xa ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fdd7        0xa ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.xTaskCheckForTimeOut.str1.4
-                0x0200fcc7        0xe ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fcc7        0x1 
+                0x0200fdd7        0xe ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fdd7        0x1 
  .rodata.__func__.8
-                0x0200fcc8       0x15 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fcdd        0x3 
+                0x0200fdd8       0x15 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fded        0x3 
  .rodata.__func__.11
-                0x0200fce0       0x19 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fcf9        0x3 
+                0x0200fdf0       0x19 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fe09        0x3 
  .rodata.__func__.12
-                0x0200fcfc       0x20 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fe0c       0x20 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.__func__.14
-                0x0200fd1c       0x16 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fd32        0x2 
+                0x0200fe2c       0x16 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fe42        0x2 
  .rodata.__func__.15
-                0x0200fd34       0x13 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fd47        0x1 
+                0x0200fe44       0x13 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fe57        0x1 
  .rodata.__func__.16
-                0x0200fd48       0x13 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fd5b        0x1 
+                0x0200fe58       0x13 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fe6b        0x1 
  .rodata.__func__.20
-                0x0200fd5c        0xf ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fd6b        0x1 
+                0x0200fe6c        0xf ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fe7b        0x1 
  .rodata.__func__.21
-                0x0200fd6c       0x14 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fe7c       0x14 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.__func__.27
-                0x0200fd80        0xb ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fd8b        0x1 
+                0x0200fe90        0xb ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fe9b        0x1 
  .rodata.__func__.29
-                0x0200fd8c        0xd ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fd99        0x3 
+                0x0200fe9c        0xd ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fea9        0x3 
  .rodata.__func__.31
-                0x0200fd9c       0x15 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0200fdb1        0x3 
+                0x0200feac       0x15 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0200fec1        0x3 
  .rodata.__func__.32
-                0x0200fdb4       0x14 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fec4       0x14 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.uxTopUsedPriority
-                0x0200fdc8        0x4 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0200fed8        0x4 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .rodata.prvCheckForValidListAndQueue.str1.4
-                0x0200fdcc        0x5 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200fedc        0x5 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
  .rodata.prvInitialiseNewTimer.part.0.str1.4
-                0x0200fdcc       0x48 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200fedc       0x48 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
  .rodata.prvTimerTask.str1.4
-                0x0200fdcc       0x25 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200fedc       0x25 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
  .rodata.xTimerCreateTimerTask.str1.4
-                0x0200fdcc       0x10 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200fedc       0x10 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
  .rodata.__func__.16
-                0x0200fdcc       0x1b ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
- *fill*         0x0200fde7        0x1 
+                0x0200fedc       0x1b ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+ *fill*         0x0200fef7        0x1 
  .rodata.__func__.18
-                0x0200fde8       0x16 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0200fef8       0x16 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
  *(.mcuboot_sce9_key)
  *(.version)
- *fill*         0x0200fdfe        0x2 
- .version       0x0200fe00       0x50 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
-                0x0200fe50                        __flash_readonly$$Limit = .
+ *fill*         0x0200ff0e        0x2 
+ .version       0x0200ff10       0x50 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+                0x0200ff60                        __flash_readonly$$Limit = .
 
-.glue_7         0x0200fe50        0x0
- .glue_7        0x0200fe50        0x0 linker stubs
+.glue_7         0x0200ff60        0x0
+ .glue_7        0x0200ff60        0x0 linker stubs
 
-.glue_7t        0x0200fe50        0x0
- .glue_7t       0x0200fe50        0x0 linker stubs
+.glue_7t        0x0200ff60        0x0
+ .glue_7t       0x0200ff60        0x0 linker stubs
 
-.vfp11_veneer   0x0200fe50        0x0
- .vfp11_veneer  0x0200fe50        0x0 linker stubs
+.vfp11_veneer   0x0200ff60        0x0
+ .vfp11_veneer  0x0200ff60        0x0 linker stubs
 
-.v4_bx          0x0200fe50        0x0
- .v4_bx         0x0200fe50        0x0 linker stubs
+.v4_bx          0x0200ff60        0x0
+ .v4_bx         0x0200ff60        0x0 linker stubs
 
-.init           0x0200fe50        0x4
- .init          0x0200fe50        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crti.o
-                0x0200fe50                _init
+.init           0x0200ff60        0x4
+ .init          0x0200ff60        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crti.o
+                0x0200ff60                _init
 
-.fini           0x0200fe54        0x4
- .fini          0x0200fe54        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crti.o
-                0x0200fe54                _fini
+.fini           0x0200ff64        0x4
+ .fini          0x0200ff64        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crti.o
+                0x0200ff64                _fini
 
-.iplt           0x0200fe58        0x0
- .iplt          0x0200fe58        0x0 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crtbegin.o
+.iplt           0x0200ff68        0x0
+ .iplt          0x0200ff68        0x0 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crtbegin.o
 
 __flash_ctor$$
  *crtbegin.o(.ctors)
@@ -20309,43 +20316,43 @@ __flash_ctor$$
  *(.dtors)
 
 __flash_preinit_array$$
-                0x0200fe58        0x0
-                0x0200fe58                        __preinit_array_start = .
+                0x0200ff68        0x0
+                0x0200ff68                        __preinit_array_start = .
  *(.preinit_array)
-                0x0200fe58                        __preinit_array_end = .
+                0x0200ff68                        __preinit_array_end = .
 
 __flash_.got$$
  *(.got.plt)
  *(.got)
 
 __flash_init_array$$
-                0x0200fe58        0x4
-                0x0200fe58                        __init_array_start = .
+                0x0200ff68        0x4
+                0x0200ff68                        __init_array_start = .
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x0200fe58        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crtbegin.o
-                0x0200fe5c                        __init_array_end = .
+ .init_array    0x0200ff68        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crtbegin.o
+                0x0200ff6c                        __init_array_end = .
 
 __flash_fini_array$$
-                0x0200fe5c        0x4
-                0x0200fe5c                        __fini_array_start = .
+                0x0200ff6c        0x4
+                0x0200ff6c                        __fini_array_start = .
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x0200fe5c        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crtbegin.o
-                0x0200fe60                        __fini_array_end = .
+ .fini_array    0x0200ff6c        0x4 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard/crtbegin.o
+                0x0200ff70                        __fini_array_end = .
 
 __flash_arm.extab$$
  *(.ARM.extab*)
  *(.gnu.linkonce.armextab.*)
 
 __flash_arm.exidx$$
-                0x0200fe60        0x8
-                0x0200fe60                        __exidx_start = .
+                0x0200ff70        0x8
+                0x0200ff70                        __exidx_start = .
  *(.ARM.exidx*)
  .ARM.exidx.text.__udivmoddi4
-                0x0200fe60        0x8 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_udivmoddi4.o)
+                0x0200ff70        0x8 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_udivmoddi4.o)
  *(.gnu.linkonce.armexidx.*)
-                0x0200fe68                        __exidx_end = .
+                0x0200ff78                        __exidx_end = .
 
 .flash.endof    0x02010000        0x0
                 0x02010000                        __ddsc_FLASH_END = .
@@ -20934,640 +20941,640 @@ LOAD linker stubs
  .comment       0x00000045       0x46 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .comment       0x00000045       0x46 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
 
-.debug_info     0x00000000    0xc7d1f
+.debug_info     0x00000000    0xc7f24
  .debug_info    0x00000000     0x1908 ./src/lcd_mipi/lcd_mipi.o
- .debug_info    0x00001908     0x7ab1 ./src/ceu/ceu.o
- .debug_info    0x000093b9      0xffd ./src/hal_warmstart.o
- .debug_info    0x0000a3b6     0x5c24 ./src/main0_thread_entry.o
- .debug_info    0x0000ffda     0x37e4 ./ra_gen/common_data.o
- .debug_info    0x000137be     0x5cb6 ./ra_gen/hal_data.o
- .debug_info    0x00019474      0x647 ./ra_gen/main.o
- .debug_info    0x00019abb      0x2a9 ./ra_gen/main0_thread.o
- .debug_info    0x00019d64      0xa3d ./ra_gen/pin_data.o
- .debug_info    0x0001a7a1      0xe79 ./ra_gen/vector_data.o
- .debug_info    0x0001b61a     0x34ec ./ra/tes/dave2d/src/dave_box.o
- .debug_info    0x0001eb06     0x289b ./ra/tes/dave2d/src/dave_context.o
- .debug_info    0x000213a1     0x149b ./ra/tes/dave2d/src/dave_curve.o
- .debug_info    0x0002283c     0x272d ./ra/tes/dave2d/src/dave_dlist.o
- .debug_info    0x00024f69     0x238b ./ra/tes/dave2d/src/dave_driver.o
- .debug_info    0x000272f4     0x1500 ./ra/tes/dave2d/src/dave_edge.o
- .debug_info    0x000287f4     0x13fa ./ra/tes/dave2d/src/dave_gradient.o
- .debug_info    0x00029bee     0x134e ./ra/tes/dave2d/src/dave_hardware.o
- .debug_info    0x0002af3c     0x57cd ./ra/tes/dave2d/src/dave_line.o
- .debug_info    0x00030709      0x109 ./ra/tes/dave2d/src/dave_math.o
- .debug_info    0x00030812     0x128a ./ra/tes/dave2d/src/dave_memory.o
- .debug_info    0x00031a9c     0x1338 ./ra/tes/dave2d/src/dave_pattern.o
- .debug_info    0x00032dd4     0x2419 ./ra/tes/dave2d/src/dave_polyline.o
- .debug_info    0x000351ed     0x2291 ./ra/tes/dave2d/src/dave_rbuffer.o
- .debug_info    0x0003747e     0x430c ./ra/tes/dave2d/src/dave_render.o
- .debug_info    0x0003b78a     0x2a74 ./ra/tes/dave2d/src/dave_texture.o
- .debug_info    0x0003e1fe     0x1229 ./ra/tes/dave2d/src/dave_viewport.o
- .debug_info    0x0003f427     0x4c47 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
- .debug_info    0x0004406e     0x173d ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
- .debug_info    0x000457ab     0x7653 ./ra/fsp/src/rm_freertos_port/port.o
- .debug_info    0x0004cdfe     0x34c2 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
- .debug_info    0x000502c0     0x59b1 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
- .debug_info    0x00055c71     0x7171 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_info    0x0005cde2    0x11f5e ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_info    0x0006ed40     0x2cd5 ./ra/fsp/src/r_ipc/r_ipc.o
- .debug_info    0x00071a15     0xa0cf ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_info    0x0007bae4     0xbc52 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_info    0x00087736     0x7b6c ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_info    0x0008f2a2     0x22e3 ./ra/fsp/src/r_drw/r_drw_base.o
- .debug_info    0x00091585     0x330a ./ra/fsp/src/r_drw/r_drw_irq.o
- .debug_info    0x0009488f      0x64c ./ra/fsp/src/r_drw/r_drw_memory.o
- .debug_info    0x00094edb     0x4fb0 ./ra/fsp/src/r_dmac/r_dmac.o
- .debug_info    0x00099e8b     0x4f60 ./ra/fsp/src/r_ceu/r_ceu.o
- .debug_info    0x0009edeb      0x7c7 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
- .debug_info    0x0009f5b2     0xad99 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_info    0x000aa34b      0x966 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_info    0x000aacb1      0x204 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_info    0x000aaeb5     0x1826 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_info    0x000ac6db       0xb2 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
- .debug_info    0x000ac78d     0x1d43 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_info    0x000ae4d0     0x6360 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_info    0x000b4830      0x188 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_info    0x000b49b8     0x8e74 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_info    0x000bd82c      0x874 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_info    0x000be0a0      0x2c1 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
- .debug_info    0x000be361     0x331b ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- .debug_info    0x000c167c     0x426a ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- .debug_info    0x000c58e6     0x2439 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+ .debug_info    0x00001908     0x99f3 ./src/ceu/ceu.o
+ .debug_info    0x0000b2fb      0xffd ./src/hal_warmstart.o
+ .debug_info    0x0000c2f8     0x3ee7 ./src/main0_thread_entry.o
+ .debug_info    0x000101df     0x37e4 ./ra_gen/common_data.o
+ .debug_info    0x000139c3     0x5cb6 ./ra_gen/hal_data.o
+ .debug_info    0x00019679      0x647 ./ra_gen/main.o
+ .debug_info    0x00019cc0      0x2a9 ./ra_gen/main0_thread.o
+ .debug_info    0x00019f69      0xa3d ./ra_gen/pin_data.o
+ .debug_info    0x0001a9a6      0xe79 ./ra_gen/vector_data.o
+ .debug_info    0x0001b81f     0x34ec ./ra/tes/dave2d/src/dave_box.o
+ .debug_info    0x0001ed0b     0x289b ./ra/tes/dave2d/src/dave_context.o
+ .debug_info    0x000215a6     0x149b ./ra/tes/dave2d/src/dave_curve.o
+ .debug_info    0x00022a41     0x272d ./ra/tes/dave2d/src/dave_dlist.o
+ .debug_info    0x0002516e     0x238b ./ra/tes/dave2d/src/dave_driver.o
+ .debug_info    0x000274f9     0x1500 ./ra/tes/dave2d/src/dave_edge.o
+ .debug_info    0x000289f9     0x13fa ./ra/tes/dave2d/src/dave_gradient.o
+ .debug_info    0x00029df3     0x134e ./ra/tes/dave2d/src/dave_hardware.o
+ .debug_info    0x0002b141     0x57cd ./ra/tes/dave2d/src/dave_line.o
+ .debug_info    0x0003090e      0x109 ./ra/tes/dave2d/src/dave_math.o
+ .debug_info    0x00030a17     0x128a ./ra/tes/dave2d/src/dave_memory.o
+ .debug_info    0x00031ca1     0x1338 ./ra/tes/dave2d/src/dave_pattern.o
+ .debug_info    0x00032fd9     0x2419 ./ra/tes/dave2d/src/dave_polyline.o
+ .debug_info    0x000353f2     0x2291 ./ra/tes/dave2d/src/dave_rbuffer.o
+ .debug_info    0x00037683     0x430c ./ra/tes/dave2d/src/dave_render.o
+ .debug_info    0x0003b98f     0x2a74 ./ra/tes/dave2d/src/dave_texture.o
+ .debug_info    0x0003e403     0x1229 ./ra/tes/dave2d/src/dave_viewport.o
+ .debug_info    0x0003f62c     0x4c47 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+ .debug_info    0x00044273     0x173d ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+ .debug_info    0x000459b0     0x7653 ./ra/fsp/src/rm_freertos_port/port.o
+ .debug_info    0x0004d003     0x34c2 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+ .debug_info    0x000504c5     0x59b1 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+ .debug_info    0x00055e76     0x7171 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_info    0x0005cfe7    0x11f5e ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_info    0x0006ef45     0x2cd5 ./ra/fsp/src/r_ipc/r_ipc.o
+ .debug_info    0x00071c1a     0xa0cf ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_info    0x0007bce9     0xbc52 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_info    0x0008793b     0x7b6c ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_info    0x0008f4a7     0x22e3 ./ra/fsp/src/r_drw/r_drw_base.o
+ .debug_info    0x0009178a     0x330a ./ra/fsp/src/r_drw/r_drw_irq.o
+ .debug_info    0x00094a94      0x64c ./ra/fsp/src/r_drw/r_drw_memory.o
+ .debug_info    0x000950e0     0x4fb0 ./ra/fsp/src/r_dmac/r_dmac.o
+ .debug_info    0x0009a090     0x4f60 ./ra/fsp/src/r_ceu/r_ceu.o
+ .debug_info    0x0009eff0      0x7c7 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+ .debug_info    0x0009f7b7     0xad99 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_info    0x000aa550      0x966 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_info    0x000aaeb6      0x204 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_info    0x000ab0ba     0x1826 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_info    0x000ac8e0       0xb2 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+ .debug_info    0x000ac992     0x1d43 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_info    0x000ae6d5     0x6360 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_info    0x000b4a35      0x188 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_info    0x000b4bbd     0x8e74 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_info    0x000bda31      0x874 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_info    0x000be2a5      0x2c1 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+ .debug_info    0x000be566     0x331b ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ .debug_info    0x000c1881     0x426a ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ .debug_info    0x000c5aeb     0x2439 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
 
-.debug_abbrev   0x00000000     0xc498
+.debug_abbrev   0x00000000     0xc476
  .debug_abbrev  0x00000000      0x399 ./src/lcd_mipi/lcd_mipi.o
- .debug_abbrev  0x00000399      0x5ee ./src/ceu/ceu.o
- .debug_abbrev  0x00000987      0x158 ./src/hal_warmstart.o
- .debug_abbrev  0x00000adf      0x4cc ./src/main0_thread_entry.o
- .debug_abbrev  0x00000fab      0x319 ./ra_gen/common_data.o
- .debug_abbrev  0x000012c4      0x301 ./ra_gen/hal_data.o
- .debug_abbrev  0x000015c5      0x1ed ./ra_gen/main.o
- .debug_abbrev  0x000017b2      0x193 ./ra_gen/main0_thread.o
- .debug_abbrev  0x00001945       0xfd ./ra_gen/pin_data.o
- .debug_abbrev  0x00001a42       0xbe ./ra_gen/vector_data.o
- .debug_abbrev  0x00001b00      0x3dd ./ra/tes/dave2d/src/dave_box.o
- .debug_abbrev  0x00001edd      0x3e4 ./ra/tes/dave2d/src/dave_context.o
- .debug_abbrev  0x000022c1      0x299 ./ra/tes/dave2d/src/dave_curve.o
- .debug_abbrev  0x0000255a      0x472 ./ra/tes/dave2d/src/dave_dlist.o
- .debug_abbrev  0x000029cc      0x4ab ./ra/tes/dave2d/src/dave_driver.o
- .debug_abbrev  0x00002e77      0x270 ./ra/tes/dave2d/src/dave_edge.o
- .debug_abbrev  0x000030e7      0x29b ./ra/tes/dave2d/src/dave_gradient.o
- .debug_abbrev  0x00003382      0x284 ./ra/tes/dave2d/src/dave_hardware.o
- .debug_abbrev  0x00003606      0x3b2 ./ra/tes/dave2d/src/dave_line.o
- .debug_abbrev  0x000039b8       0xb0 ./ra/tes/dave2d/src/dave_math.o
- .debug_abbrev  0x00003a68      0x2cb ./ra/tes/dave2d/src/dave_memory.o
- .debug_abbrev  0x00003d33      0x25a ./ra/tes/dave2d/src/dave_pattern.o
- .debug_abbrev  0x00003f8d      0x39c ./ra/tes/dave2d/src/dave_polyline.o
- .debug_abbrev  0x00004329      0x445 ./ra/tes/dave2d/src/dave_rbuffer.o
- .debug_abbrev  0x0000476e      0x3f4 ./ra/tes/dave2d/src/dave_render.o
- .debug_abbrev  0x00004b62      0x41c ./ra/tes/dave2d/src/dave_texture.o
- .debug_abbrev  0x00004f7e      0x275 ./ra/tes/dave2d/src/dave_viewport.o
- .debug_abbrev  0x000051f3      0x3ee ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
- .debug_abbrev  0x000055e1      0x505 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
- .debug_abbrev  0x00005ae6      0x417 ./ra/fsp/src/rm_freertos_port/port.o
- .debug_abbrev  0x00005efd      0x4a8 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
- .debug_abbrev  0x000063a5      0x4d6 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
- .debug_abbrev  0x0000687b      0x308 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_abbrev  0x00006b83      0x6fe ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_abbrev  0x00007281      0x4b7 ./ra/fsp/src/r_ipc/r_ipc.o
- .debug_abbrev  0x00007738      0x476 ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_abbrev  0x00007bae      0x62e ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_abbrev  0x000081dc      0x64f ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_abbrev  0x0000882b      0x2d1 ./ra/fsp/src/r_drw/r_drw_base.o
- .debug_abbrev  0x00008afc      0x44e ./ra/fsp/src/r_drw/r_drw_irq.o
- .debug_abbrev  0x00008f4a      0x2a7 ./ra/fsp/src/r_drw/r_drw_memory.o
- .debug_abbrev  0x000091f1      0x5a7 ./ra/fsp/src/r_dmac/r_dmac.o
- .debug_abbrev  0x00009798      0x535 ./ra/fsp/src/r_ceu/r_ceu.o
- .debug_abbrev  0x00009ccd      0x10a ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
- .debug_abbrev  0x00009dd7      0x482 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_abbrev  0x0000a259      0x188 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_abbrev  0x0000a3e1      0x10d ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_abbrev  0x0000a4ee      0x260 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_abbrev  0x0000a74e       0x5e ./ra/fsp/src/bsp/mcu/all/bsp_io.o
- .debug_abbrev  0x0000a7ac      0x1cf ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_abbrev  0x0000a97b      0x26c ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_abbrev  0x0000abe7       0xf9 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_abbrev  0x0000ace0      0x4b7 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_abbrev  0x0000b197      0x311 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_abbrev  0x0000b4a8      0x103 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
- .debug_abbrev  0x0000b5ab      0x4cd ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- .debug_abbrev  0x0000ba78      0x550 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- .debug_abbrev  0x0000bfc8      0x4d0 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+ .debug_abbrev  0x00000399      0x679 ./src/ceu/ceu.o
+ .debug_abbrev  0x00000a12      0x158 ./src/hal_warmstart.o
+ .debug_abbrev  0x00000b6a      0x41f ./src/main0_thread_entry.o
+ .debug_abbrev  0x00000f89      0x319 ./ra_gen/common_data.o
+ .debug_abbrev  0x000012a2      0x301 ./ra_gen/hal_data.o
+ .debug_abbrev  0x000015a3      0x1ed ./ra_gen/main.o
+ .debug_abbrev  0x00001790      0x193 ./ra_gen/main0_thread.o
+ .debug_abbrev  0x00001923       0xfd ./ra_gen/pin_data.o
+ .debug_abbrev  0x00001a20       0xbe ./ra_gen/vector_data.o
+ .debug_abbrev  0x00001ade      0x3dd ./ra/tes/dave2d/src/dave_box.o
+ .debug_abbrev  0x00001ebb      0x3e4 ./ra/tes/dave2d/src/dave_context.o
+ .debug_abbrev  0x0000229f      0x299 ./ra/tes/dave2d/src/dave_curve.o
+ .debug_abbrev  0x00002538      0x472 ./ra/tes/dave2d/src/dave_dlist.o
+ .debug_abbrev  0x000029aa      0x4ab ./ra/tes/dave2d/src/dave_driver.o
+ .debug_abbrev  0x00002e55      0x270 ./ra/tes/dave2d/src/dave_edge.o
+ .debug_abbrev  0x000030c5      0x29b ./ra/tes/dave2d/src/dave_gradient.o
+ .debug_abbrev  0x00003360      0x284 ./ra/tes/dave2d/src/dave_hardware.o
+ .debug_abbrev  0x000035e4      0x3b2 ./ra/tes/dave2d/src/dave_line.o
+ .debug_abbrev  0x00003996       0xb0 ./ra/tes/dave2d/src/dave_math.o
+ .debug_abbrev  0x00003a46      0x2cb ./ra/tes/dave2d/src/dave_memory.o
+ .debug_abbrev  0x00003d11      0x25a ./ra/tes/dave2d/src/dave_pattern.o
+ .debug_abbrev  0x00003f6b      0x39c ./ra/tes/dave2d/src/dave_polyline.o
+ .debug_abbrev  0x00004307      0x445 ./ra/tes/dave2d/src/dave_rbuffer.o
+ .debug_abbrev  0x0000474c      0x3f4 ./ra/tes/dave2d/src/dave_render.o
+ .debug_abbrev  0x00004b40      0x41c ./ra/tes/dave2d/src/dave_texture.o
+ .debug_abbrev  0x00004f5c      0x275 ./ra/tes/dave2d/src/dave_viewport.o
+ .debug_abbrev  0x000051d1      0x3ee ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+ .debug_abbrev  0x000055bf      0x505 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+ .debug_abbrev  0x00005ac4      0x417 ./ra/fsp/src/rm_freertos_port/port.o
+ .debug_abbrev  0x00005edb      0x4a8 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+ .debug_abbrev  0x00006383      0x4d6 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+ .debug_abbrev  0x00006859      0x308 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_abbrev  0x00006b61      0x6fe ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_abbrev  0x0000725f      0x4b7 ./ra/fsp/src/r_ipc/r_ipc.o
+ .debug_abbrev  0x00007716      0x476 ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_abbrev  0x00007b8c      0x62e ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_abbrev  0x000081ba      0x64f ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_abbrev  0x00008809      0x2d1 ./ra/fsp/src/r_drw/r_drw_base.o
+ .debug_abbrev  0x00008ada      0x44e ./ra/fsp/src/r_drw/r_drw_irq.o
+ .debug_abbrev  0x00008f28      0x2a7 ./ra/fsp/src/r_drw/r_drw_memory.o
+ .debug_abbrev  0x000091cf      0x5a7 ./ra/fsp/src/r_dmac/r_dmac.o
+ .debug_abbrev  0x00009776      0x535 ./ra/fsp/src/r_ceu/r_ceu.o
+ .debug_abbrev  0x00009cab      0x10a ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+ .debug_abbrev  0x00009db5      0x482 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_abbrev  0x0000a237      0x188 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_abbrev  0x0000a3bf      0x10d ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_abbrev  0x0000a4cc      0x260 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_abbrev  0x0000a72c       0x5e ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+ .debug_abbrev  0x0000a78a      0x1cf ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_abbrev  0x0000a959      0x26c ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_abbrev  0x0000abc5       0xf9 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_abbrev  0x0000acbe      0x4b7 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_abbrev  0x0000b175      0x311 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_abbrev  0x0000b486      0x103 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+ .debug_abbrev  0x0000b589      0x4cd ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ .debug_abbrev  0x0000ba56      0x550 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ .debug_abbrev  0x0000bfa6      0x4d0 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
 
 .debug_loclists
-                0x00000000    0x23254
+                0x00000000    0x23272
  .debug_loclists
                 0x00000000       0x57 ./src/lcd_mipi/lcd_mipi.o
  .debug_loclists
-                0x00000057     0x27e4 ./src/ceu/ceu.o
+                0x00000057     0x281d ./src/ceu/ceu.o
  .debug_loclists
-                0x0000283b       0x29 ./src/hal_warmstart.o
+                0x00002874       0x29 ./src/hal_warmstart.o
  .debug_loclists
-                0x00002864       0x6f ./src/main0_thread_entry.o
+                0x0000289d       0x54 ./src/main0_thread_entry.o
  .debug_loclists
-                0x000028d3       0x20 ./ra_gen/main.o
+                0x000028f1       0x20 ./ra_gen/main.o
  .debug_loclists
-                0x000028f3       0x42 ./ra_gen/main0_thread.o
+                0x00002911       0x42 ./ra_gen/main0_thread.o
  .debug_loclists
-                0x00002935     0x1c60 ./ra/tes/dave2d/src/dave_box.o
+                0x00002953     0x1c60 ./ra/tes/dave2d/src/dave_box.o
  .debug_loclists
-                0x00004595     0x1443 ./ra/tes/dave2d/src/dave_context.o
+                0x000045b3     0x1443 ./ra/tes/dave2d/src/dave_context.o
  .debug_loclists
-                0x000059d8      0xa8d ./ra/tes/dave2d/src/dave_curve.o
+                0x000059f6      0xa8d ./ra/tes/dave2d/src/dave_curve.o
  .debug_loclists
-                0x00006465     0x1464 ./ra/tes/dave2d/src/dave_dlist.o
+                0x00006483     0x1464 ./ra/tes/dave2d/src/dave_dlist.o
  .debug_loclists
-                0x000078c9      0xd9a ./ra/tes/dave2d/src/dave_driver.o
+                0x000078e7      0xd9a ./ra/tes/dave2d/src/dave_driver.o
  .debug_loclists
-                0x00008663     0x1044 ./ra/tes/dave2d/src/dave_edge.o
+                0x00008681     0x1044 ./ra/tes/dave2d/src/dave_edge.o
  .debug_loclists
-                0x000096a7      0x4ee ./ra/tes/dave2d/src/dave_gradient.o
+                0x000096c5      0x4ee ./ra/tes/dave2d/src/dave_gradient.o
  .debug_loclists
-                0x00009b95      0x322 ./ra/tes/dave2d/src/dave_hardware.o
+                0x00009bb3      0x322 ./ra/tes/dave2d/src/dave_hardware.o
  .debug_loclists
-                0x00009eb7     0x41b0 ./ra/tes/dave2d/src/dave_line.o
+                0x00009ed5     0x41b0 ./ra/tes/dave2d/src/dave_line.o
  .debug_loclists
-                0x0000e067      0x13b ./ra/tes/dave2d/src/dave_math.o
+                0x0000e085      0x13b ./ra/tes/dave2d/src/dave_math.o
  .debug_loclists
-                0x0000e1a2      0x32a ./ra/tes/dave2d/src/dave_memory.o
+                0x0000e1c0      0x32a ./ra/tes/dave2d/src/dave_memory.o
  .debug_loclists
-                0x0000e4cc      0x565 ./ra/tes/dave2d/src/dave_pattern.o
+                0x0000e4ea      0x565 ./ra/tes/dave2d/src/dave_pattern.o
  .debug_loclists
-                0x0000ea31     0x1233 ./ra/tes/dave2d/src/dave_polyline.o
+                0x0000ea4f     0x1233 ./ra/tes/dave2d/src/dave_polyline.o
  .debug_loclists
-                0x0000fc64      0xc50 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x0000fc82      0xc50 ./ra/tes/dave2d/src/dave_rbuffer.o
  .debug_loclists
-                0x000108b4     0x2d29 ./ra/tes/dave2d/src/dave_render.o
+                0x000108d2     0x2d29 ./ra/tes/dave2d/src/dave_render.o
  .debug_loclists
-                0x000135dd     0x1c42 ./ra/tes/dave2d/src/dave_texture.o
+                0x000135fb     0x1c42 ./ra/tes/dave2d/src/dave_texture.o
  .debug_loclists
-                0x0001521f      0x4c3 ./ra/tes/dave2d/src/dave_viewport.o
+                0x0001523d      0x4c3 ./ra/tes/dave2d/src/dave_viewport.o
  .debug_loclists
-                0x000156e2      0x44f ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+                0x00015700      0x44f ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
  .debug_loclists
-                0x00015b31      0x95e ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+                0x00015b4f      0x95e ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
  .debug_loclists
-                0x0001648f      0x2b7 ./ra/fsp/src/rm_freertos_port/port.o
+                0x000164ad      0x2b7 ./ra/fsp/src/rm_freertos_port/port.o
  .debug_loclists
-                0x00016746      0x2f5 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+                0x00016764      0x2f5 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
  .debug_loclists
-                0x00016a3b      0xae0 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+                0x00016a59      0xae0 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .debug_loclists
-                0x0001751b      0x109 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+                0x00017539      0x109 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
  .debug_loclists
-                0x00017624     0x13c2 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x00017642     0x13c2 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
  .debug_loclists
-                0x000189e6      0x341 ./ra/fsp/src/r_ipc/r_ipc.o
+                0x00018a04      0x341 ./ra/fsp/src/r_ipc/r_ipc.o
  .debug_loclists
-                0x00018d27      0x7e5 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x00018d45      0x7e5 ./ra/fsp/src/r_ioport/r_ioport.o
  .debug_loclists
-                0x0001950c      0xfbe ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x0001952a      0xfbe ./ra/fsp/src/r_iic_master/r_iic_master.o
  .debug_loclists
-                0x0001a4ca     0x162d ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x0001a4e8     0x162d ./ra/fsp/src/r_glcdc/r_glcdc.o
  .debug_loclists
-                0x0001baf7      0x29c ./ra/fsp/src/r_drw/r_drw_base.o
+                0x0001bb15      0x29c ./ra/fsp/src/r_drw/r_drw_base.o
  .debug_loclists
-                0x0001bd93      0x1d1 ./ra/fsp/src/r_drw/r_drw_irq.o
+                0x0001bdb1      0x1d1 ./ra/fsp/src/r_drw/r_drw_irq.o
  .debug_loclists
-                0x0001bf64      0x298 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x0001bf82      0x298 ./ra/fsp/src/r_drw/r_drw_memory.o
  .debug_loclists
-                0x0001c1fc      0x74b ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0001c21a      0x74b ./ra/fsp/src/r_dmac/r_dmac.o
  .debug_loclists
-                0x0001c947      0x58e ./ra/fsp/src/r_ceu/r_ceu.o
+                0x0001c965      0x58e ./ra/fsp/src/r_ceu/r_ceu.o
  .debug_loclists
-                0x0001ced5      0x8bd ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x0001cef3      0x8bd ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
  .debug_loclists
-                0x0001d792       0x20 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+                0x0001d7b0       0x20 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
  .debug_loclists
-                0x0001d7b2      0x1ac ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+                0x0001d7d0      0x1ac ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
  .debug_loclists
-                0x0001d95e       0x73 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+                0x0001d97c       0x73 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
  .debug_loclists
-                0x0001d9d1       0x38 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+                0x0001d9ef       0x38 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
  .debug_loclists
-                0x0001da09       0xa7 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                0x0001da27       0xa7 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
  .debug_loclists
-                0x0001dab0      0x2fe ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+                0x0001dace      0x2fe ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
  .debug_loclists
-                0x0001ddae      0x46e ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0001ddcc      0x46e ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_loclists
-                0x0001e21c       0x6e ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+                0x0001e23a       0x6e ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
  .debug_loclists
-                0x0001e28a     0x1c42 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0001e2a8     0x1c42 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .debug_loclists
-                0x0001fecc     0x2223 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0001feea     0x2223 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .debug_loclists
-                0x000220ef     0x1165 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x0002210d     0x1165 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
 
-.debug_aranges  0x00000000     0x17d0
+.debug_aranges  0x00000000     0x17e0
  .debug_aranges
                 0x00000000       0x30 ./src/lcd_mipi/lcd_mipi.o
  .debug_aranges
-                0x00000030       0xd0 ./src/ceu/ceu.o
+                0x00000030       0xe0 ./src/ceu/ceu.o
  .debug_aranges
-                0x00000100       0x20 ./src/hal_warmstart.o
+                0x00000110       0x20 ./src/hal_warmstart.o
  .debug_aranges
-                0x00000120       0x28 ./src/main0_thread_entry.o
+                0x00000130       0x28 ./src/main0_thread_entry.o
  .debug_aranges
-                0x00000148       0x20 ./ra_gen/common_data.o
+                0x00000158       0x20 ./ra_gen/common_data.o
  .debug_aranges
-                0x00000168       0x20 ./ra_gen/hal_data.o
+                0x00000178       0x20 ./ra_gen/hal_data.o
  .debug_aranges
-                0x00000188       0x40 ./ra_gen/main.o
+                0x00000198       0x40 ./ra_gen/main.o
  .debug_aranges
-                0x000001c8       0x28 ./ra_gen/main0_thread.o
+                0x000001d8       0x28 ./ra_gen/main0_thread.o
  .debug_aranges
-                0x000001f0       0x18 ./ra_gen/pin_data.o
+                0x00000200       0x18 ./ra_gen/pin_data.o
  .debug_aranges
-                0x00000208       0x18 ./ra_gen/vector_data.o
+                0x00000218       0x18 ./ra_gen/vector_data.o
  .debug_aranges
-                0x00000220       0x58 ./ra/tes/dave2d/src/dave_box.o
+                0x00000230       0x58 ./ra/tes/dave2d/src/dave_box.o
  .debug_aranges
-                0x00000278      0x190 ./ra/tes/dave2d/src/dave_context.o
+                0x00000288      0x190 ./ra/tes/dave2d/src/dave_context.o
  .debug_aranges
-                0x00000408       0x20 ./ra/tes/dave2d/src/dave_curve.o
+                0x00000418       0x20 ./ra/tes/dave2d/src/dave_curve.o
  .debug_aranges
-                0x00000428       0xb8 ./ra/tes/dave2d/src/dave_dlist.o
+                0x00000438       0xb8 ./ra/tes/dave2d/src/dave_dlist.o
  .debug_aranges
-                0x000004e0       0xd8 ./ra/tes/dave2d/src/dave_driver.o
+                0x000004f0       0xd8 ./ra/tes/dave2d/src/dave_driver.o
  .debug_aranges
-                0x000005b8       0x58 ./ra/tes/dave2d/src/dave_edge.o
+                0x000005c8       0x58 ./ra/tes/dave2d/src/dave_edge.o
  .debug_aranges
-                0x00000610       0x30 ./ra/tes/dave2d/src/dave_gradient.o
+                0x00000620       0x30 ./ra/tes/dave2d/src/dave_gradient.o
  .debug_aranges
-                0x00000640       0x50 ./ra/tes/dave2d/src/dave_hardware.o
+                0x00000650       0x50 ./ra/tes/dave2d/src/dave_hardware.o
  .debug_aranges
-                0x00000690       0x90 ./ra/tes/dave2d/src/dave_line.o
+                0x000006a0       0x90 ./ra/tes/dave2d/src/dave_line.o
  .debug_aranges
-                0x00000720       0x28 ./ra/tes/dave2d/src/dave_math.o
+                0x00000730       0x28 ./ra/tes/dave2d/src/dave_math.o
  .debug_aranges
-                0x00000748       0x40 ./ra/tes/dave2d/src/dave_memory.o
+                0x00000758       0x40 ./ra/tes/dave2d/src/dave_memory.o
  .debug_aranges
-                0x00000788       0x20 ./ra/tes/dave2d/src/dave_pattern.o
+                0x00000798       0x20 ./ra/tes/dave2d/src/dave_pattern.o
  .debug_aranges
-                0x000007a8       0x78 ./ra/tes/dave2d/src/dave_polyline.o
+                0x000007b8       0x78 ./ra/tes/dave2d/src/dave_polyline.o
  .debug_aranges
-                0x00000820       0xa0 ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x00000830       0xa0 ./ra/tes/dave2d/src/dave_rbuffer.o
  .debug_aranges
-                0x000008c0       0xa8 ./ra/tes/dave2d/src/dave_render.o
+                0x000008d0       0xa8 ./ra/tes/dave2d/src/dave_render.o
  .debug_aranges
-                0x00000968       0xc8 ./ra/tes/dave2d/src/dave_texture.o
+                0x00000978       0xc8 ./ra/tes/dave2d/src/dave_texture.o
  .debug_aranges
-                0x00000a30       0x40 ./ra/tes/dave2d/src/dave_viewport.o
+                0x00000a40       0x40 ./ra/tes/dave2d/src/dave_viewport.o
  .debug_aranges
-                0x00000a70       0x70 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+                0x00000a80       0x70 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
  .debug_aranges
-                0x00000ae0       0xe8 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+                0x00000af0       0xe8 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
  .debug_aranges
-                0x00000bc8       0x90 ./ra/fsp/src/rm_freertos_port/port.o
+                0x00000bd8       0x90 ./ra/fsp/src/rm_freertos_port/port.o
  .debug_aranges
-                0x00000c58       0x38 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+                0x00000c68       0x38 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
  .debug_aranges
-                0x00000c90       0xb8 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+                0x00000ca0       0xb8 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .debug_aranges
-                0x00000d48       0x28 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+                0x00000d58       0x28 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
  .debug_aranges
-                0x00000d70       0x90 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x00000d80       0x90 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
  .debug_aranges
-                0x00000e00       0x50 ./ra/fsp/src/r_ipc/r_ipc.o
+                0x00000e10       0x50 ./ra/fsp/src/r_ipc/r_ipc.o
  .debug_aranges
-                0x00000e50       0x90 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x00000e60       0x90 ./ra/fsp/src/r_ioport/r_ioport.o
  .debug_aranges
-                0x00000ee0       0x90 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x00000ef0       0x90 ./ra/fsp/src/r_iic_master/r_iic_master.o
  .debug_aranges
-                0x00000f70       0x90 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x00000f80       0x90 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .debug_aranges
-                0x00001000       0x40 ./ra/fsp/src/r_drw/r_drw_base.o
+                0x00001010       0x40 ./ra/fsp/src/r_drw/r_drw_base.o
  .debug_aranges
-                0x00001040       0x38 ./ra/fsp/src/r_drw/r_drw_irq.o
+                0x00001050       0x38 ./ra/fsp/src/r_drw/r_drw_irq.o
  .debug_aranges
-                0x00001078       0x90 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x00001088       0x90 ./ra/fsp/src/r_drw/r_drw_memory.o
  .debug_aranges
-                0x00001108       0x80 ./ra/fsp/src/r_dmac/r_dmac.o
+                0x00001118       0x80 ./ra/fsp/src/r_dmac/r_dmac.o
  .debug_aranges
-                0x00001188       0x48 ./ra/fsp/src/r_ceu/r_ceu.o
+                0x00001198       0x48 ./ra/fsp/src/r_ceu/r_ceu.o
  .debug_aranges
-                0x000011d0       0x18 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+                0x000011e0       0x18 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
  .debug_aranges
-                0x000011e8       0x90 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x000011f8       0x90 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
  .debug_aranges
-                0x00001278       0x30 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+                0x00001288       0x30 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
  .debug_aranges
-                0x000012a8       0x28 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+                0x000012b8       0x28 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
  .debug_aranges
-                0x000012d0       0x28 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+                0x000012e0       0x28 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
  .debug_aranges
-                0x000012f8       0x18 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+                0x00001308       0x18 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
  .debug_aranges
-                0x00001310       0x20 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+                0x00001320       0x20 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
  .debug_aranges
-                0x00001330       0x28 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                0x00001340       0x28 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
  .debug_aranges
-                0x00001358       0x28 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+                0x00001368       0x28 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
  .debug_aranges
-                0x00001380       0x30 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+                0x00001390       0x30 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
  .debug_aranges
-                0x000013b0       0x58 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x000013c0       0x58 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_aranges
-                0x00001408       0x40 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+                0x00001418       0x40 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
  .debug_aranges
-                0x00001448      0x100 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x00001458      0x100 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .debug_aranges
-                0x00001548      0x1c0 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x00001558      0x1c0 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .debug_aranges
-                0x00001708       0xc8 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x00001718       0xc8 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
 
 .debug_rnglists
-                0x00000000     0x4558
+                0x00000000     0x4544
  .debug_rnglists
                 0x00000000       0x3d ./src/lcd_mipi/lcd_mipi.o
  .debug_rnglists
-                0x0000003d      0x8cb ./src/ceu/ceu.o
+                0x0000003d      0x8d7 ./src/ceu/ceu.o
  .debug_rnglists
-                0x00000908       0x13 ./src/hal_warmstart.o
+                0x00000914       0x13 ./src/hal_warmstart.o
  .debug_rnglists
-                0x0000091b       0x49 ./src/main0_thread_entry.o
+                0x00000927       0x29 ./src/main0_thread_entry.o
  .debug_rnglists
-                0x00000964       0x13 ./ra_gen/common_data.o
+                0x00000950       0x13 ./ra_gen/common_data.o
  .debug_rnglists
-                0x00000977       0x13 ./ra_gen/hal_data.o
+                0x00000963       0x13 ./ra_gen/hal_data.o
  .debug_rnglists
-                0x0000098a       0x2b ./ra_gen/main.o
+                0x00000976       0x2b ./ra_gen/main.o
  .debug_rnglists
-                0x000009b5       0x19 ./ra_gen/main0_thread.o
+                0x000009a1       0x19 ./ra_gen/main0_thread.o
  .debug_rnglists
-                0x000009ce      0x231 ./ra/tes/dave2d/src/dave_box.o
+                0x000009ba      0x231 ./ra/tes/dave2d/src/dave_box.o
  .debug_rnglists
-                0x00000bff      0x308 ./ra/tes/dave2d/src/dave_context.o
+                0x00000beb      0x308 ./ra/tes/dave2d/src/dave_context.o
  .debug_rnglists
-                0x00000f07       0xc7 ./ra/tes/dave2d/src/dave_curve.o
+                0x00000ef3       0xc7 ./ra/tes/dave2d/src/dave_curve.o
  .debug_rnglists
-                0x00000fce      0x1ea ./ra/tes/dave2d/src/dave_dlist.o
+                0x00000fba      0x1ea ./ra/tes/dave2d/src/dave_dlist.o
  .debug_rnglists
-                0x000011b8      0x21e ./ra/tes/dave2d/src/dave_driver.o
+                0x000011a4      0x21e ./ra/tes/dave2d/src/dave_driver.o
  .debug_rnglists
-                0x000013d6       0x42 ./ra/tes/dave2d/src/dave_edge.o
+                0x000013c2       0x42 ./ra/tes/dave2d/src/dave_edge.o
  .debug_rnglists
-                0x00001418       0x88 ./ra/tes/dave2d/src/dave_gradient.o
+                0x00001404       0x88 ./ra/tes/dave2d/src/dave_gradient.o
  .debug_rnglists
-                0x000014a0       0x46 ./ra/tes/dave2d/src/dave_hardware.o
+                0x0000148c       0x46 ./ra/tes/dave2d/src/dave_hardware.o
  .debug_rnglists
-                0x000014e6      0x3a4 ./ra/tes/dave2d/src/dave_line.o
+                0x000014d2      0x3a4 ./ra/tes/dave2d/src/dave_line.o
  .debug_rnglists
-                0x0000188a       0x1a ./ra/tes/dave2d/src/dave_math.o
+                0x00001876       0x1a ./ra/tes/dave2d/src/dave_math.o
  .debug_rnglists
-                0x000018a4       0x2b ./ra/tes/dave2d/src/dave_memory.o
+                0x00001890       0x2b ./ra/tes/dave2d/src/dave_memory.o
  .debug_rnglists
-                0x000018cf       0x90 ./ra/tes/dave2d/src/dave_pattern.o
+                0x000018bb       0x90 ./ra/tes/dave2d/src/dave_pattern.o
  .debug_rnglists
-                0x0000195f      0x131 ./ra/tes/dave2d/src/dave_polyline.o
+                0x0000194b      0x131 ./ra/tes/dave2d/src/dave_polyline.o
  .debug_rnglists
-                0x00001a90      0x15c ./ra/tes/dave2d/src/dave_rbuffer.o
+                0x00001a7c      0x15c ./ra/tes/dave2d/src/dave_rbuffer.o
  .debug_rnglists
-                0x00001bec      0x44d ./ra/tes/dave2d/src/dave_render.o
+                0x00001bd8      0x44d ./ra/tes/dave2d/src/dave_render.o
  .debug_rnglists
-                0x00002039      0x316 ./ra/tes/dave2d/src/dave_texture.o
+                0x00002025      0x316 ./ra/tes/dave2d/src/dave_texture.o
  .debug_rnglists
-                0x0000234f       0x3b ./ra/tes/dave2d/src/dave_viewport.o
+                0x0000233b       0x3b ./ra/tes/dave2d/src/dave_viewport.o
  .debug_rnglists
-                0x0000238a       0x7b ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+                0x00002376       0x7b ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
  .debug_rnglists
-                0x00002405      0x15c ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+                0x000023f1      0x15c ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
  .debug_rnglists
-                0x00002561      0x115 ./ra/fsp/src/rm_freertos_port/port.o
+                0x0000254d      0x115 ./ra/fsp/src/rm_freertos_port/port.o
  .debug_rnglists
-                0x00002676       0xe0 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+                0x00002662       0xe0 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
  .debug_rnglists
-                0x00002756       0xaf ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+                0x00002742       0xaf ./ra/fsp/src/r_ospi_b/r_ospi_b.o
  .debug_rnglists
-                0x00002805       0x2e ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+                0x000027f1       0x2e ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
  .debug_rnglists
-                0x00002833      0x476 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x0000281f      0x476 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
  .debug_rnglists
-                0x00002ca9       0xb6 ./ra/fsp/src/r_ipc/r_ipc.o
+                0x00002c95       0xb6 ./ra/fsp/src/r_ipc/r_ipc.o
  .debug_rnglists
-                0x00002d5f       0xbc ./ra/fsp/src/r_ioport/r_ioport.o
+                0x00002d4b       0xbc ./ra/fsp/src/r_ioport/r_ioport.o
  .debug_rnglists
-                0x00002e1b      0x3c9 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x00002e07      0x3c9 ./ra/fsp/src/r_iic_master/r_iic_master.o
  .debug_rnglists
-                0x000031e4      0x307 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x000031d0      0x307 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .debug_rnglists
-                0x000034eb       0x2b ./ra/fsp/src/r_drw/r_drw_base.o
+                0x000034d7       0x2b ./ra/fsp/src/r_drw/r_drw_base.o
  .debug_rnglists
-                0x00003516       0xc2 ./ra/fsp/src/r_drw/r_drw_irq.o
+                0x00003502       0xc2 ./ra/fsp/src/r_drw/r_drw_irq.o
  .debug_rnglists
-                0x000035d8       0x67 ./ra/fsp/src/r_drw/r_drw_memory.o
+                0x000035c4       0x67 ./ra/fsp/src/r_drw/r_drw_memory.o
  .debug_rnglists
-                0x0000363f      0x14f ./ra/fsp/src/r_dmac/r_dmac.o
+                0x0000362b      0x14f ./ra/fsp/src/r_dmac/r_dmac.o
  .debug_rnglists
-                0x0000378e      0x10c ./ra/fsp/src/r_ceu/r_ceu.o
+                0x0000377a      0x10c ./ra/fsp/src/r_ceu/r_ceu.o
  .debug_rnglists
-                0x0000389a      0x1af ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x00003886      0x1af ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
  .debug_rnglists
-                0x00003a49       0x1f ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+                0x00003a35       0x1f ./ra/fsp/src/bsp/mcu/all/bsp_common.o
  .debug_rnglists
-                0x00003a68       0x35 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+                0x00003a54       0x35 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
  .debug_rnglists
-                0x00003a9d       0x37 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+                0x00003a89       0x37 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
  .debug_rnglists
-                0x00003ad4       0x1f ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+                0x00003ac0       0x1f ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
  .debug_rnglists
-                0x00003af3       0x31 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                0x00003adf       0x31 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
  .debug_rnglists
-                0x00003b24       0x19 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+                0x00003b10       0x19 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
  .debug_rnglists
-                0x00003b3d       0xb1 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+                0x00003b29       0xb1 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
  .debug_rnglists
-                0x00003bee       0x58 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x00003bda       0x58 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_rnglists
-                0x00003c46       0x2b ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+                0x00003c32       0x2b ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
  .debug_rnglists
-                0x00003c71      0x2a3 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+                0x00003c5d      0x2a3 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
  .debug_rnglists
-                0x00003f14      0x4aa ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x00003f00      0x4aa ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
  .debug_rnglists
-                0x000043be      0x19a ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+                0x000043aa      0x19a ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
 
-.debug_line     0x00000000    0x2b364
+.debug_line     0x00000000    0x2b257
  .debug_line    0x00000000      0x381 ./src/lcd_mipi/lcd_mipi.o
- .debug_line    0x00000381     0x3269 ./src/ceu/ceu.o
- .debug_line    0x000035ea      0x2a4 ./src/hal_warmstart.o
- .debug_line    0x0000388e      0x782 ./src/main0_thread_entry.o
- .debug_line    0x00004010      0x400 ./ra_gen/common_data.o
- .debug_line    0x00004410      0x364 ./ra_gen/hal_data.o
- .debug_line    0x00004774      0x309 ./ra_gen/main.o
- .debug_line    0x00004a7d      0x275 ./ra_gen/main0_thread.o
- .debug_line    0x00004cf2      0x214 ./ra_gen/pin_data.o
- .debug_line    0x00004f06      0x12f ./ra_gen/vector_data.o
- .debug_line    0x00005035     0x1517 ./ra/tes/dave2d/src/dave_box.o
- .debug_line    0x0000654c     0x1752 ./ra/tes/dave2d/src/dave_context.o
- .debug_line    0x00007c9e      0x601 ./ra/tes/dave2d/src/dave_curve.o
- .debug_line    0x0000829f     0x1b60 ./ra/tes/dave2d/src/dave_dlist.o
- .debug_line    0x00009dff      0xfb8 ./ra/tes/dave2d/src/dave_driver.o
- .debug_line    0x0000adb7      0xa8d ./ra/tes/dave2d/src/dave_edge.o
- .debug_line    0x0000b844      0x5af ./ra/tes/dave2d/src/dave_gradient.o
- .debug_line    0x0000bdf3      0x333 ./ra/tes/dave2d/src/dave_hardware.o
- .debug_line    0x0000c126     0x2cb4 ./ra/tes/dave2d/src/dave_line.o
- .debug_line    0x0000edda      0x222 ./ra/tes/dave2d/src/dave_math.o
- .debug_line    0x0000effc      0x2da ./ra/tes/dave2d/src/dave_memory.o
- .debug_line    0x0000f2d6      0x3cd ./ra/tes/dave2d/src/dave_pattern.o
- .debug_line    0x0000f6a3      0xa98 ./ra/tes/dave2d/src/dave_polyline.o
- .debug_line    0x0001013b     0x11ee ./ra/tes/dave2d/src/dave_rbuffer.o
- .debug_line    0x00011329     0x2142 ./ra/tes/dave2d/src/dave_render.o
- .debug_line    0x0001346b     0x1986 ./ra/tes/dave2d/src/dave_texture.o
- .debug_line    0x00014df1      0x4c0 ./ra/tes/dave2d/src/dave_viewport.o
- .debug_line    0x000152b1      0x758 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
- .debug_line    0x00015a09      0xc6a ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
- .debug_line    0x00016673      0xa1f ./ra/fsp/src/rm_freertos_port/port.o
- .debug_line    0x00017092      0x843 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
- .debug_line    0x000178d5      0xf57 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
- .debug_line    0x0001882c      0x471 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_line    0x00018c9d     0x1cde ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_line    0x0001a97b      0x737 ./ra/fsp/src/r_ipc/r_ipc.o
- .debug_line    0x0001b0b2      0xb37 ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_line    0x0001bbe9     0x1a53 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_line    0x0001d63c     0x19e2 ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_line    0x0001f01e      0x4fb ./ra/fsp/src/r_drw/r_drw_base.o
- .debug_line    0x0001f519      0x6dc ./ra/fsp/src/r_drw/r_drw_irq.o
- .debug_line    0x0001fbf5      0x346 ./ra/fsp/src/r_drw/r_drw_memory.o
- .debug_line    0x0001ff3b      0xce9 ./ra/fsp/src/r_dmac/r_dmac.o
- .debug_line    0x00020c24      0xa75 ./ra/fsp/src/r_ceu/r_ceu.o
- .debug_line    0x00021699       0xf5 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
- .debug_line    0x0002178e     0x1556 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_line    0x00022ce4      0x221 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_line    0x00022f05      0x292 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_line    0x00023197      0x320 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_line    0x000234b7      0x129 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
- .debug_line    0x000235e0      0x26f ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_line    0x0002384f      0x371 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_line    0x00023bc0      0x195 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_line    0x00023d55      0xaee ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_line    0x00024843      0x86a ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_line    0x000250ad      0x376 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
- .debug_line    0x00025423     0x1f32 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- .debug_line    0x00027355     0x314f ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- .debug_line    0x0002a4a4      0xec0 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+ .debug_line    0x00000381     0x3314 ./src/ceu/ceu.o
+ .debug_line    0x00003695      0x2a4 ./src/hal_warmstart.o
+ .debug_line    0x00003939      0x5ca ./src/main0_thread_entry.o
+ .debug_line    0x00003f03      0x400 ./ra_gen/common_data.o
+ .debug_line    0x00004303      0x364 ./ra_gen/hal_data.o
+ .debug_line    0x00004667      0x309 ./ra_gen/main.o
+ .debug_line    0x00004970      0x275 ./ra_gen/main0_thread.o
+ .debug_line    0x00004be5      0x214 ./ra_gen/pin_data.o
+ .debug_line    0x00004df9      0x12f ./ra_gen/vector_data.o
+ .debug_line    0x00004f28     0x1517 ./ra/tes/dave2d/src/dave_box.o
+ .debug_line    0x0000643f     0x1752 ./ra/tes/dave2d/src/dave_context.o
+ .debug_line    0x00007b91      0x601 ./ra/tes/dave2d/src/dave_curve.o
+ .debug_line    0x00008192     0x1b60 ./ra/tes/dave2d/src/dave_dlist.o
+ .debug_line    0x00009cf2      0xfb8 ./ra/tes/dave2d/src/dave_driver.o
+ .debug_line    0x0000acaa      0xa8d ./ra/tes/dave2d/src/dave_edge.o
+ .debug_line    0x0000b737      0x5af ./ra/tes/dave2d/src/dave_gradient.o
+ .debug_line    0x0000bce6      0x333 ./ra/tes/dave2d/src/dave_hardware.o
+ .debug_line    0x0000c019     0x2cb4 ./ra/tes/dave2d/src/dave_line.o
+ .debug_line    0x0000eccd      0x222 ./ra/tes/dave2d/src/dave_math.o
+ .debug_line    0x0000eeef      0x2da ./ra/tes/dave2d/src/dave_memory.o
+ .debug_line    0x0000f1c9      0x3cd ./ra/tes/dave2d/src/dave_pattern.o
+ .debug_line    0x0000f596      0xa98 ./ra/tes/dave2d/src/dave_polyline.o
+ .debug_line    0x0001002e     0x11ee ./ra/tes/dave2d/src/dave_rbuffer.o
+ .debug_line    0x0001121c     0x2142 ./ra/tes/dave2d/src/dave_render.o
+ .debug_line    0x0001335e     0x1986 ./ra/tes/dave2d/src/dave_texture.o
+ .debug_line    0x00014ce4      0x4c0 ./ra/tes/dave2d/src/dave_viewport.o
+ .debug_line    0x000151a4      0x758 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+ .debug_line    0x000158fc      0xc6a ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+ .debug_line    0x00016566      0xa1f ./ra/fsp/src/rm_freertos_port/port.o
+ .debug_line    0x00016f85      0x843 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+ .debug_line    0x000177c8      0xf57 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+ .debug_line    0x0001871f      0x471 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_line    0x00018b90     0x1cde ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_line    0x0001a86e      0x737 ./ra/fsp/src/r_ipc/r_ipc.o
+ .debug_line    0x0001afa5      0xb37 ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_line    0x0001badc     0x1a53 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_line    0x0001d52f     0x19e2 ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_line    0x0001ef11      0x4fb ./ra/fsp/src/r_drw/r_drw_base.o
+ .debug_line    0x0001f40c      0x6dc ./ra/fsp/src/r_drw/r_drw_irq.o
+ .debug_line    0x0001fae8      0x346 ./ra/fsp/src/r_drw/r_drw_memory.o
+ .debug_line    0x0001fe2e      0xce9 ./ra/fsp/src/r_dmac/r_dmac.o
+ .debug_line    0x00020b17      0xa75 ./ra/fsp/src/r_ceu/r_ceu.o
+ .debug_line    0x0002158c       0xf5 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+ .debug_line    0x00021681     0x1556 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_line    0x00022bd7      0x221 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_line    0x00022df8      0x292 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_line    0x0002308a      0x320 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_line    0x000233aa      0x129 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+ .debug_line    0x000234d3      0x26f ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_line    0x00023742      0x371 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_line    0x00023ab3      0x195 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_line    0x00023c48      0xaee ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_line    0x00024736      0x86a ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_line    0x00024fa0      0x376 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+ .debug_line    0x00025316     0x1f32 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ .debug_line    0x00027248     0x314f ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ .debug_line    0x0002a397      0xec0 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
 
-.debug_str      0x00000000    0x2202c
- .debug_str     0x00000000    0x2202c ./src/lcd_mipi/lcd_mipi.o
+.debug_str      0x00000000    0x22033
+ .debug_str     0x00000000    0x22033 ./src/lcd_mipi/lcd_mipi.o
                                0x3ef3 (size before relaxing)
- .debug_str     0x0002202c     0x33f3 ./src/ceu/ceu.o
- .debug_str     0x0002202c     0x3227 ./src/hal_warmstart.o
- .debug_str     0x0002202c     0x6892 ./src/main0_thread_entry.o
- .debug_str     0x0002202c     0x6a34 ./ra_gen/common_data.o
- .debug_str     0x0002202c     0x850b ./ra_gen/hal_data.o
- .debug_str     0x0002202c      0x60e ./ra_gen/main.o
- .debug_str     0x0002202c      0x3b8 ./ra_gen/main0_thread.o
- .debug_str     0x0002202c     0x1de3 ./ra_gen/pin_data.o
- .debug_str     0x0002202c     0x2f79 ./ra_gen/vector_data.o
- .debug_str     0x0002202c      0xe63 ./ra/tes/dave2d/src/dave_box.o
- .debug_str     0x0002202c     0x1096 ./ra/tes/dave2d/src/dave_context.o
- .debug_str     0x0002202c      0xb4e ./ra/tes/dave2d/src/dave_curve.o
- .debug_str     0x0002202c     0x119c ./ra/tes/dave2d/src/dave_dlist.o
- .debug_str     0x0002202c     0x109e ./ra/tes/dave2d/src/dave_driver.o
- .debug_str     0x0002202c      0xbec ./ra/tes/dave2d/src/dave_edge.o
- .debug_str     0x0002202c      0xb9a ./ra/tes/dave2d/src/dave_gradient.o
- .debug_str     0x0002202c      0xd91 ./ra/tes/dave2d/src/dave_hardware.o
- .debug_str     0x0002202c     0x1052 ./ra/tes/dave2d/src/dave_line.o
- .debug_str     0x0002202c      0x203 ./ra/tes/dave2d/src/dave_math.o
- .debug_str     0x0002202c      0xc81 ./ra/tes/dave2d/src/dave_memory.o
- .debug_str     0x0002202c      0xb74 ./ra/tes/dave2d/src/dave_pattern.o
- .debug_str     0x0002202c      0xee6 ./ra/tes/dave2d/src/dave_polyline.o
- .debug_str     0x0002202c     0x107d ./ra/tes/dave2d/src/dave_rbuffer.o
- .debug_str     0x0002202c     0x1376 ./ra/tes/dave2d/src/dave_render.o
- .debug_str     0x0002202c      0xfa9 ./ra/tes/dave2d/src/dave_texture.o
- .debug_str     0x0002202c      0xcec ./ra/tes/dave2d/src/dave_viewport.o
- .debug_str     0x0002202c     0x20ce ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
- .debug_str     0x0002202c      0xb51 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
- .debug_str     0x0002202c     0x3255 ./ra/fsp/src/rm_freertos_port/port.o
- .debug_str     0x0002202c     0x2efb ./ra/fsp/src/rm_ethosu/rm_ethosu.o
- .debug_str     0x0002202c     0x7f24 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
- .debug_str     0x0002202c     0x4b1d ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_str     0x0002202c     0x8696 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_str     0x0002202c     0x29ab ./ra/fsp/src/r_ipc/r_ipc.o
- .debug_str     0x0002202c     0x6f3d ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_str     0x0002202c     0x6636 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_str     0x0002202c     0x6a35 ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_str     0x0002202c     0x1150 ./ra/fsp/src/r_drw/r_drw_base.o
- .debug_str     0x0002202c     0x1594 ./ra/fsp/src/r_drw/r_drw_irq.o
- .debug_str     0x0002202c      0x3c7 ./ra/fsp/src/r_drw/r_drw_memory.o
- .debug_str     0x0002202c     0x60da ./ra/fsp/src/r_dmac/r_dmac.o
- .debug_str     0x0002202c     0x3900 ./ra/fsp/src/r_ceu/r_ceu.o
- .debug_str     0x0002202c      0xff1 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
- .debug_str     0x0002202c     0x48a0 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_str     0x0002202c     0x1cda ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_str     0x0002202c      0x342 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_str     0x0002202c     0x23c0 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_str     0x0002202c      0x221 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
- .debug_str     0x0002202c     0x34dc ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_str     0x0002202c     0x2d7e ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_str     0x0002202c      0x290 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_str     0x0002202c     0x3e49 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_str     0x0002202c      0x5ac ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_str     0x0002202c      0x34f ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
- .debug_str     0x0002202c      0xcea ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- .debug_str     0x0002202c     0x1367 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- .debug_str     0x0002202c      0xd27 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+ .debug_str     0x00022033     0x5991 ./src/ceu/ceu.o
+ .debug_str     0x00022033     0x3227 ./src/hal_warmstart.o
+ .debug_str     0x00022033     0x537d ./src/main0_thread_entry.o
+ .debug_str     0x00022033     0x6a34 ./ra_gen/common_data.o
+ .debug_str     0x00022033     0x850b ./ra_gen/hal_data.o
+ .debug_str     0x00022033      0x60e ./ra_gen/main.o
+ .debug_str     0x00022033      0x3b8 ./ra_gen/main0_thread.o
+ .debug_str     0x00022033     0x1de3 ./ra_gen/pin_data.o
+ .debug_str     0x00022033     0x2f79 ./ra_gen/vector_data.o
+ .debug_str     0x00022033      0xe63 ./ra/tes/dave2d/src/dave_box.o
+ .debug_str     0x00022033     0x1096 ./ra/tes/dave2d/src/dave_context.o
+ .debug_str     0x00022033      0xb4e ./ra/tes/dave2d/src/dave_curve.o
+ .debug_str     0x00022033     0x119c ./ra/tes/dave2d/src/dave_dlist.o
+ .debug_str     0x00022033     0x109e ./ra/tes/dave2d/src/dave_driver.o
+ .debug_str     0x00022033      0xbec ./ra/tes/dave2d/src/dave_edge.o
+ .debug_str     0x00022033      0xb9a ./ra/tes/dave2d/src/dave_gradient.o
+ .debug_str     0x00022033      0xd91 ./ra/tes/dave2d/src/dave_hardware.o
+ .debug_str     0x00022033     0x1052 ./ra/tes/dave2d/src/dave_line.o
+ .debug_str     0x00022033      0x203 ./ra/tes/dave2d/src/dave_math.o
+ .debug_str     0x00022033      0xc81 ./ra/tes/dave2d/src/dave_memory.o
+ .debug_str     0x00022033      0xb74 ./ra/tes/dave2d/src/dave_pattern.o
+ .debug_str     0x00022033      0xee6 ./ra/tes/dave2d/src/dave_polyline.o
+ .debug_str     0x00022033     0x107d ./ra/tes/dave2d/src/dave_rbuffer.o
+ .debug_str     0x00022033     0x1376 ./ra/tes/dave2d/src/dave_render.o
+ .debug_str     0x00022033      0xfa9 ./ra/tes/dave2d/src/dave_texture.o
+ .debug_str     0x00022033      0xcec ./ra/tes/dave2d/src/dave_viewport.o
+ .debug_str     0x00022033     0x20ce ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+ .debug_str     0x00022033      0xb51 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+ .debug_str     0x00022033     0x3255 ./ra/fsp/src/rm_freertos_port/port.o
+ .debug_str     0x00022033     0x2efb ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+ .debug_str     0x00022033     0x7f24 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+ .debug_str     0x00022033     0x4b1d ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_str     0x00022033     0x8696 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_str     0x00022033     0x29ab ./ra/fsp/src/r_ipc/r_ipc.o
+ .debug_str     0x00022033     0x6f3d ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_str     0x00022033     0x6636 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_str     0x00022033     0x6a35 ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_str     0x00022033     0x1150 ./ra/fsp/src/r_drw/r_drw_base.o
+ .debug_str     0x00022033     0x1594 ./ra/fsp/src/r_drw/r_drw_irq.o
+ .debug_str     0x00022033      0x3c7 ./ra/fsp/src/r_drw/r_drw_memory.o
+ .debug_str     0x00022033     0x60da ./ra/fsp/src/r_dmac/r_dmac.o
+ .debug_str     0x00022033     0x3900 ./ra/fsp/src/r_ceu/r_ceu.o
+ .debug_str     0x00022033      0xff1 ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+ .debug_str     0x00022033     0x48a0 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_str     0x00022033     0x1cda ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_str     0x00022033      0x342 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_str     0x00022033     0x23c0 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_str     0x00022033      0x221 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+ .debug_str     0x00022033     0x34dc ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_str     0x00022033     0x2d7e ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_str     0x00022033      0x290 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_str     0x00022033     0x3e49 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_str     0x00022033      0x5ac ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_str     0x00022033      0x34f ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+ .debug_str     0x00022033      0xcea ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ .debug_str     0x00022033     0x1367 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ .debug_str     0x00022033      0xd27 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
 
-.debug_frame    0x00000000     0x4674
+.debug_frame    0x00000000     0x46a8
  .debug_frame   0x00000000       0x54 ./src/lcd_mipi/lcd_mipi.o
- .debug_frame   0x00000054      0x394 ./src/ceu/ceu.o
- .debug_frame   0x000003e8       0x20 ./src/hal_warmstart.o
- .debug_frame   0x00000408       0x48 ./src/main0_thread_entry.o
- .debug_frame   0x00000450       0x20 ./ra_gen/common_data.o
- .debug_frame   0x00000470       0x20 ./ra_gen/hal_data.o
- .debug_frame   0x00000490       0x90 ./ra_gen/main.o
- .debug_frame   0x00000520       0x58 ./ra_gen/main0_thread.o
- .debug_frame   0x00000578      0x150 ./ra/tes/dave2d/src/dave_box.o
- .debug_frame   0x000006c8      0x430 ./ra/tes/dave2d/src/dave_context.o
- .debug_frame   0x00000af8       0x50 ./ra/tes/dave2d/src/dave_curve.o
- .debug_frame   0x00000b48      0x2d4 ./ra/tes/dave2d/src/dave_dlist.o
- .debug_frame   0x00000e1c      0x230 ./ra/tes/dave2d/src/dave_driver.o
- .debug_frame   0x0000104c      0x130 ./ra/tes/dave2d/src/dave_edge.o
- .debug_frame   0x0000117c       0x70 ./ra/tes/dave2d/src/dave_gradient.o
- .debug_frame   0x000011ec       0xc4 ./ra/tes/dave2d/src/dave_hardware.o
- .debug_frame   0x000012b0      0x278 ./ra/tes/dave2d/src/dave_line.o
- .debug_frame   0x00001528       0x30 ./ra/tes/dave2d/src/dave_math.o
- .debug_frame   0x00001558       0xc0 ./ra/tes/dave2d/src/dave_memory.o
- .debug_frame   0x00001618       0x3c ./ra/tes/dave2d/src/dave_pattern.o
- .debug_frame   0x00001654      0x1e0 ./ra/tes/dave2d/src/dave_polyline.o
- .debug_frame   0x00001834      0x1d8 ./ra/tes/dave2d/src/dave_rbuffer.o
- .debug_frame   0x00001a0c      0x3c8 ./ra/tes/dave2d/src/dave_render.o
- .debug_frame   0x00001dd4      0x244 ./ra/tes/dave2d/src/dave_texture.o
- .debug_frame   0x00002018       0xb8 ./ra/tes/dave2d/src/dave_viewport.o
- .debug_frame   0x000020d0      0x110 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
- .debug_frame   0x000021e0      0x268 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
- .debug_frame   0x00002448      0x160 ./ra/fsp/src/rm_freertos_port/port.o
- .debug_frame   0x000025a8       0x88 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
- .debug_frame   0x00002630      0x214 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
- .debug_frame   0x00002844       0x3c ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_frame   0x00002880      0x20c ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_frame   0x00002a8c       0xc0 ./ra/fsp/src/r_ipc/r_ipc.o
- .debug_frame   0x00002b4c      0x17c ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_frame   0x00002cc8      0x1a4 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_frame   0x00002e6c      0x1c4 ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_frame   0x00003030       0x7c ./ra/fsp/src/r_drw/r_drw_base.o
- .debug_frame   0x000030ac       0x84 ./ra/fsp/src/r_drw/r_drw_irq.o
- .debug_frame   0x00003130      0x110 ./ra/fsp/src/r_drw/r_drw_memory.o
- .debug_frame   0x00003240      0x154 ./ra/fsp/src/r_dmac/r_dmac.o
- .debug_frame   0x00003394       0xc4 ./ra/fsp/src/r_ceu/r_ceu.o
- .debug_frame   0x00003458      0x170 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_frame   0x000035c8       0x40 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_frame   0x00003608       0x4c ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_frame   0x00003654       0x40 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_frame   0x00003694       0x2c ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_frame   0x000036c0       0x48 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_frame   0x00003708       0x38 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_frame   0x00003740       0x70 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_frame   0x000037b0      0x108 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_frame   0x000038b8       0x70 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
- .debug_frame   0x00003928      0x388 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
- .debug_frame   0x00003cb0      0x620 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
- .debug_frame   0x000042d0      0x2e0 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
- .debug_frame   0x000045b0       0x44 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_aeabi_ldivmod.o)
- .debug_frame   0x000045f4       0x38 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_udivmoddi4.o)
- .debug_frame   0x0000462c       0x20 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libg_nano.a(libc_a-memset.o)
- .debug_frame   0x0000464c       0x28 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_frame   0x00000054      0x3c8 ./src/ceu/ceu.o
+ .debug_frame   0x0000041c       0x20 ./src/hal_warmstart.o
+ .debug_frame   0x0000043c       0x48 ./src/main0_thread_entry.o
+ .debug_frame   0x00000484       0x20 ./ra_gen/common_data.o
+ .debug_frame   0x000004a4       0x20 ./ra_gen/hal_data.o
+ .debug_frame   0x000004c4       0x90 ./ra_gen/main.o
+ .debug_frame   0x00000554       0x58 ./ra_gen/main0_thread.o
+ .debug_frame   0x000005ac      0x150 ./ra/tes/dave2d/src/dave_box.o
+ .debug_frame   0x000006fc      0x430 ./ra/tes/dave2d/src/dave_context.o
+ .debug_frame   0x00000b2c       0x50 ./ra/tes/dave2d/src/dave_curve.o
+ .debug_frame   0x00000b7c      0x2d4 ./ra/tes/dave2d/src/dave_dlist.o
+ .debug_frame   0x00000e50      0x230 ./ra/tes/dave2d/src/dave_driver.o
+ .debug_frame   0x00001080      0x130 ./ra/tes/dave2d/src/dave_edge.o
+ .debug_frame   0x000011b0       0x70 ./ra/tes/dave2d/src/dave_gradient.o
+ .debug_frame   0x00001220       0xc4 ./ra/tes/dave2d/src/dave_hardware.o
+ .debug_frame   0x000012e4      0x278 ./ra/tes/dave2d/src/dave_line.o
+ .debug_frame   0x0000155c       0x30 ./ra/tes/dave2d/src/dave_math.o
+ .debug_frame   0x0000158c       0xc0 ./ra/tes/dave2d/src/dave_memory.o
+ .debug_frame   0x0000164c       0x3c ./ra/tes/dave2d/src/dave_pattern.o
+ .debug_frame   0x00001688      0x1e0 ./ra/tes/dave2d/src/dave_polyline.o
+ .debug_frame   0x00001868      0x1d8 ./ra/tes/dave2d/src/dave_rbuffer.o
+ .debug_frame   0x00001a40      0x3c8 ./ra/tes/dave2d/src/dave_render.o
+ .debug_frame   0x00001e08      0x244 ./ra/tes/dave2d/src/dave_texture.o
+ .debug_frame   0x0000204c       0xb8 ./ra/tes/dave2d/src/dave_viewport.o
+ .debug_frame   0x00002104      0x110 ./ra/npu/ethos-u-core-driver/src/ethosu_device_u55_u65.o
+ .debug_frame   0x00002214      0x268 ./ra/npu/ethos-u-core-driver/src/ethosu_driver.o
+ .debug_frame   0x0000247c      0x160 ./ra/fsp/src/rm_freertos_port/port.o
+ .debug_frame   0x000025dc       0x88 ./ra/fsp/src/rm_ethosu/rm_ethosu.o
+ .debug_frame   0x00002664      0x214 ./ra/fsp/src/r_ospi_b/r_ospi_b.o
+ .debug_frame   0x00002878       0x3c ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_frame   0x000028b4      0x20c ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_frame   0x00002ac0       0xc0 ./ra/fsp/src/r_ipc/r_ipc.o
+ .debug_frame   0x00002b80      0x17c ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_frame   0x00002cfc      0x1a4 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_frame   0x00002ea0      0x1c4 ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_frame   0x00003064       0x7c ./ra/fsp/src/r_drw/r_drw_base.o
+ .debug_frame   0x000030e0       0x84 ./ra/fsp/src/r_drw/r_drw_irq.o
+ .debug_frame   0x00003164      0x110 ./ra/fsp/src/r_drw/r_drw_memory.o
+ .debug_frame   0x00003274      0x154 ./ra/fsp/src/r_dmac/r_dmac.o
+ .debug_frame   0x000033c8       0xc4 ./ra/fsp/src/r_ceu/r_ceu.o
+ .debug_frame   0x0000348c      0x170 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_frame   0x000035fc       0x40 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_frame   0x0000363c       0x4c ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_frame   0x00003688       0x40 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_frame   0x000036c8       0x2c ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_frame   0x000036f4       0x48 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_frame   0x0000373c       0x38 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_frame   0x00003774       0x70 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_frame   0x000037e4      0x108 ./ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_frame   0x000038ec       0x70 ./ra/aws/FreeRTOS/FreeRTOS/Source/list.o
+ .debug_frame   0x0000395c      0x388 ./ra/aws/FreeRTOS/FreeRTOS/Source/queue.o
+ .debug_frame   0x00003ce4      0x620 ./ra/aws/FreeRTOS/FreeRTOS/Source/tasks.o
+ .debug_frame   0x00004304      0x2e0 ./ra/aws/FreeRTOS/FreeRTOS/Source/timers.o
+ .debug_frame   0x000045e4       0x44 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_aeabi_ldivmod.o)
+ .debug_frame   0x00004628       0x38 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00004660       0x20 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libg_nano.a(libc_a-memset.o)
+ .debug_frame   0x00004680       0x28 D:/e2s_download/M33/13.3 rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v8-m.main+dp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
 .debug_line_str
                 0x00000000       0xd9
