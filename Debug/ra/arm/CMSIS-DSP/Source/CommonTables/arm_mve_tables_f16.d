@@ -1,0 +1,10 @@
+ra/arm/CMSIS-DSP/Source/CommonTables/arm_mve_tables_f16.o: \
+ ../ra/arm/CMSIS-DSP/Source/CommonTables/arm_mve_tables_f16.c \
+ D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-DSP/Include/arm_math_types_f16.h \
+ D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-DSP/Include/arm_math_types.h \
+ D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS_6/CMSIS/Core/Include/cmsis_compiler.h \
+ D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS_6/CMSIS/Core/Include/cmsis_gcc.h
+D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-DSP/Include/arm_math_types_f16.h:
+D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-DSP/Include/arm_math_types.h:
+D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS_6/CMSIS/Core/Include/cmsis_compiler.h:
+D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS_6/CMSIS/Core/Include/cmsis_gcc.h:

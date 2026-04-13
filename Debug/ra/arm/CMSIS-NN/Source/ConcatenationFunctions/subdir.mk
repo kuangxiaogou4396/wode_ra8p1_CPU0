@@ -1,0 +1,35 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_w.c \
+../ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_x.c \
+../ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_y.c \
+../ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_z.c 
+
+C_DEPS += \
+./ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_w.d \
+./ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_x.d \
+./ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_y.d \
+./ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_z.d 
+
+OBJS += \
+./ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_w.o \
+./ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_x.o \
+./ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_y.o \
+./ra/arm/CMSIS-NN/Source/ConcatenationFunctions/arm_concatenation_s8_z.o 
+
+SREC += \
+wode_ra8p1_CPU0.srec 
+
+MAP += \
+wode_ra8p1_CPU0.map 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+ra/arm/CMSIS-NN/Source/ConcatenationFunctions/%.o: ../ra/arm/CMSIS-NN/Source/ConcatenationFunctions/%.c
+	$(file > $@.in,-mthumb -mfloat-abi=hard -mcpu=cortex-m85+nopacbti -O2 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-strict-aliasing -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal -g -D_RENESAS_RA_ -D_RA_CORE=CPU0 -D_RA_ORDINAL=1 -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra_gen" -I"." -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra_cfg/fsp_cfg/bsp" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra_cfg/fsp_cfg" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra_cfg/aws" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/src" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/fsp/inc" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/fsp/inc/api" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/fsp/inc/instances" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/fsp/src/rm_freertos_port" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS_6/CMSIS/Core/Include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/aws/FreeRTOS/FreeRTOS/Source/include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-NN/Include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-NN" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/ethos-u-core-software/lib/layer_by_layer_profiler/include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/ethos-u-core-software/lib/ethosu_monitor/include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/ethos-u-core-software/lib/ethosu_profiler/include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/ethos-u-core-driver/include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/fsp/src/rm_ethosu" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/flatbuffers/include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-DSP/PrivateInclude" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-DSP/Include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/ruy" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/gemmlowp" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/tflite-micro" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/ethos-u-core-software/lib/crc/include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/npu/ethos-u-core-software/lib/arm_profiler/include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-View/EventRecorder/Include" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/arm/CMSIS-View/EventRecorder/Config" -I"D:/Renesas_workspace/e2s_work/wode_ra8p1_CPU0/ra/tes/dave2d/inc" -std=c99 -Wno-stringop-overflow -Wno-format-truncation -w -flax-vector-conversions --param=min-pagesize=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -c -o "$@" -x c "$<")
+	@echo Building file: $< && arm-none-eabi-gcc @"$@.in"
+

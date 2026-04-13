@@ -1,0 +1,27 @@
+T7010 000:001.026   SEGGER J-Link V8.74 Log File
+T7010 000:001.165   DLL Compiled: Sep 30 2025 12:11:23
+T7010 000:001.176   Logging started @ 2026-04-09 05:15
+T7010 000:001.186   Process: C:\Users\28972\.eclipse\com.renesas.platform_1913321052\DebugComp\RA\e2-server-gdb.exe
+T7010 000:001.200 - 1.195ms 
+T7010 000:001.218 JLINK_GetDLLVersion()
+T7010 000:001.228 - 0.010ms returns 87400
+T7010 000:004.769 JLINK_OpenEx(...)
+T7010 000:008.728   Looking for J-Link GUI Server exe at: C:\Users\28972\.eclipse\com.renesas.platform_1913321052\DebugComp\RA\ARM\Segger_v8.74.0\JLinkGUIServer.exe
+T7010 000:008.905   Looking for J-Link GUI Server exe at: \JLinkGUIServer.exe
+T7010 000:316.551   Failed to connect to J-Link GUI Server.
+T7010 000:325.592   
+  ***** Error: 
+T7010 000:325.603   Cannot connect to J-Link.
+T7010 000:325.754 - 320.985ms returns "Cannot connect to J-Link."
+T7010 000:325.894 JLINK_OpenEx(...)
+T7010 000:326.777   Looking for J-Link GUI Server exe at: C:\Users\28972\.eclipse\com.renesas.platform_1913321052\DebugComp\RA\ARM\Segger_v8.74.0\JLinkGUIServer.exe
+T7010 000:326.833   Looking for J-Link GUI Server exe at: \JLinkGUIServer.exe
+T7010 000:636.272   Failed to connect to J-Link GUI Server.
+T7010 000:636.298   
+  ***** Error: 
+T7010 000:636.304   Cannot connect to J-Link.
+T7010 000:636.433 - 310.538ms returns "Cannot connect to J-Link."
+T7010 003:680.492 JLINK_Close()
+T7010 003:681.530 - 1.037ms
+T7010 003:681.552   
+T7010 003:681.558   Closed
